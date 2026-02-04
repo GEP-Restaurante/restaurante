@@ -5,56 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contactos | GEP Restaurante</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon (logo da GEP) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagens/gep.logo.jpg">
-
 </head>
 <body>
 
-  <!-- Barra de navegação -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
-    </a>
-  </div>
+  <!-- Header institucional -->
+  <header>
+    <img src="imagens/entrada.jpg" alt="Entrada GEP Restaurante" class="header-img">
+  </header>
 
-  <!-- Botão Opções (mobile) -->
-  <button class="menu-toggle">Opções ☰</button>
-
-  <!-- Links desktop -->
-  <ul class="nav-links">
-    <li><a href="menu.html">Menu</a></li>
-	 <li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>   
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
       </a>
-    </li>
-  </ul>
+    </div>
 
-  <!-- Menu mobile -->
-  <ul class="mobile-menu">
-    <li><a href="menu.html">Menu</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>
-    <li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <!-- Botão WhatsApp mobile -->
-    <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
-      </a>
-    </li>
-  </ul>
-</nav>
+    <!-- Botão Opções (mobile) -->
+    <button class="menu-toggle">Opções ☰</button>
+
+    <!-- Links desktop -->
+    <ul class="nav-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="encomendas.html">Encomendas</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contactos.html" class="active">Contactos</a></li>
+      <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
+      <li>
+        <a href="https://wa.me/244923281469" target="_blank">
+          <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
+          Posso ajudar?
+        </a>
+      </li>
+    </ul>
+
+    <!-- Menu mobile -->
+    <ul class="mobile-menu">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="encomendas.html">Encomendas</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contactos.html" class="active">Contactos</a></li>
+      <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
+      <li>
+        <a href="https://wa.me/244923281469" target="_blank">
+          <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;"></a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Conteúdo Contactos -->
   <main>
@@ -69,7 +70,30 @@
   </main>
 
   <!-- Footer -->
-  
+  <footer>
+    <p>&copy; 2026 GEP Restaurante | Since 2018</p>
+  </footer>
 
+  <!-- Script Menu Mobile -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+        mobileMenu.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
