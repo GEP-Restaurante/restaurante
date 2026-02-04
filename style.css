@@ -293,3 +293,81 @@ footer a:hover {
     max-width: 280px;
   }
 }
+
+/* ===== Carrinho ===== */
+#carrinho {
+  max-height: 300px;          /* altura máxima antes de scroll */
+  overflow-y: auto;           /* ativa scroll vertical */
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+#lista-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-info {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.item-actions button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: linear-gradient(45deg, gold, coral);
+  color: #111;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.item-actions button:hover {
+  background: #0077cc;
+  color: #fff;
+}
+
+/* ===== Botão Finalizar fixo ===== */
+.finalizar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  border-top: 2px solid #ccc;
+  text-align: center;
+  z-index: 1000;
+}
+
+.btn-encomenda {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, gold, coral);
+  color: #111;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-encomenda:hover {
+  background: #0077cc;
+  color: #fff;
+}
+
