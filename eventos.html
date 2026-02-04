@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos | GEP Restaurante</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon (logo da GEP) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagens/gep.logo.jpg">
-
 </head>
 <body>
 
@@ -25,28 +24,29 @@
   <!-- Links desktop -->
   <ul class="nav-links">
     <li><a href="menu.html">Menu</a></li>
-	 <li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>   
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="encomendas.html">Encomendas</a></li>
+    <li><a href="eventos.html" class="active">Eventos</a></li>
+    <li><a href="contactos.html">Contactos</a></li>
+    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
     <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;"></a>
+      <a href="https://wa.me/244923281469" target="_blank">
+        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
+        Posso ajudar?
+      </a>
     </li>
   </ul>
 
   <!-- Menu mobile -->
   <ul class="mobile-menu">
     <li><a href="menu.html">Menu</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>
     <li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <!-- Botão WhatsApp mobile -->
+    <li><a href="eventos.html" class="active">Eventos</a></li>
+    <li><a href="contactos.html">Contactos</a></li>
+    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
     <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/244923281469" target="_blank">
         <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
         Posso ajudar?
       </a>
@@ -54,28 +54,35 @@
   </ul>
 </nav>
 
-  <!-- Conteúdo Eventos -->
-  <main>
-    <section id="eventos">
-      <h2>Eventos</h2>
-      <p>Descobre os eventos especiais e noites temáticas do GEP Restaurante.</p>
-      <div class="galeria">
-        <img src="imagens/evento1.jpg" alt="Noite de Música ao Vivo">
-        <img src="imagens/evento2.jpg" alt="Festival Gastronómico">
-        <img src="imagens/evento3.jpg" alt="Aniversário GEP">
-      </div>
-    </section>
-  </main>
+<!-- Conteúdo Eventos -->
+<main>
+  <section id="eventos">
+    <h2>Eventos</h2>
+    <p>Descobre os eventos especiais e noites temáticas do GEP Restaurante.</p>
+    <div class="galeria">
+      <img src="imagens/evento1.jpg" alt="Noite de Música ao Vivo">
+      <img src="imagens/evento2.jpg" alt="Festival Gastronómico">
+      <img src="imagens/evento3.jpg" alt="Aniversário GEP">
+    </div>
+  </section>
+</main>
 
-   <!-- Script Lightbox + Menu Mobile -->
-  <script>
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <div class="caption"></div>
+</div>
+
+<!-- Script Lightbox + Menu Mobile -->
+<script>
   // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.querySelector('.lightbox-img');
   const caption = document.querySelector('.caption');
   const closeBtn = document.querySelector('.close');
 
-  document.querySelectorAll('main img').forEach(img => {
+  document.querySelectorAll('.galeria img').forEach(img => {
     img.addEventListener('click', () => {
       lightbox.style.display = 'flex';
       lightboxImg.src = img.src;
@@ -97,23 +104,16 @@
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Abre/fecha ao clicar no botão
   menuToggle.addEventListener('click', () => {
-    if (mobileMenu.style.display === 'flex') {
-      mobileMenu.style.display = 'none';
-    } else {
-      mobileMenu.style.display = 'flex';
-    }
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
   });
 
-  // Fecha ao clicar em qualquer link do menu
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.style.display = 'none';
     });
   });
 
-  // Fecha ao clicar fora do menu
   document.addEventListener('click', (e) => {
     if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
       mobileMenu.style.display = 'none';
