@@ -14,63 +14,47 @@
 
 <!-- Barra de navegação -->
 <nav class="navbar">
+  <!-- Logo -->
   <div class="logo">
     <a href="index.html">
       <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
     </a>
   </div>
 
-  <!-- Links desktop -->
-  <ul class="nav-links">
-    <li><a href="menu.html" class="active">Menu</a></li>
-    <li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
-      </a>
-    </li>
-    <!-- Filtro integrado na NAV -->
-    <li>
-      <div class="filtro">
-        <label for="categoria">Filtrar:</label>
-        <select id="categoria">
-          <option value="todos">Todos</option>
-          <option value="entradas">Entradas e Petiscos</option>
-          <option value="pequeno-almoco">Pequeno Almoço</option>
-          <option value="carnes">Pratos Carnes</option>
-          <option value="massas">Massas Diverso</option>
-          <option value="bebidas">Bebidas</option>
-          <option value="cervejas">Cervejas Diversas</option>
-          <option value="cocktails">Cocktails</option>
-          <option value="cafe">Café</option>
-          <option value="champanhe">Champanhe</option>
-          <option value="whiskey-velho">Whiskey Velho Dose</option>
-          <option value="whiskey-novo">Whiskey Novo</option>
-          <option value="vinho-tinto">Vinho Tinto</option>
-          <option value="vinho-branco">Vinho Branco Verde</option>
-          <option value="vinho-rose">Vinho Rosé</option>
-          <option value="licores">Licores</option>
-          <option value="cognacs">Cognacs</option>
-          <option value="shots">Shots</option>
-          <option value="sangrias">Sangrias Diversas</option>
-          <option value="vodka-gin">Vodka & Gin</option>
-          <option value="aguardente">Aguardente</option>
-        </select>
-        <button id="limpar-filtro" class="btn-filtro">Limpar</button>
-      </div>
-    </li>
-  </ul>
+  <!-- Filtro (mobile e desktop) -->
+  <div class="filtro filtro-nav">
+    <label for="categoria">Filtrar:</label>
+    <select id="categoria">
+      <option value="todos">Todos</option>
+      <option value="entradas">Entradas e Petiscos</option>
+      <option value="pequeno-almoco">Pequeno Almoço</option>
+      <option value="carnes">Pratos Carnes</option>
+      <option value="massas">Massas Diverso</option>
+      <option value="bebidas">Bebidas</option>
+      <option value="cervejas">Cervejas Diversas</option>
+      <option value="cocktails">Cocktails</option>
+      <option value="cafe">Café</option>
+      <option value="champanhe">Champanhe</option>
+      <option value="whiskey-velho">Whiskey Velho Dose</option>
+      <option value="whiskey-novo">Whiskey Novo</option>
+      <option value="vinho-tinto">Vinho Tinto</option>
+      <option value="vinho-branco">Vinho Branco Verde</option>
+      <option value="vinho-rose">Vinho Rosé</option>
+      <option value="licores">Licores</option>
+      <option value="cognacs">Cognacs</option>
+      <option value="shots">Shots</option>
+      <option value="sangrias">Sangrias Diversas</option>
+      <option value="vodka-gin">Vodka & Gin</option>
+      <option value="aguardente">Aguardente</option>
+    </select>
+    <button id="limpar-filtro" class="btn-filtro">Limpar</button>
+  </div>
 
-  <!-- Botão Opções (mobile) -->
+  <!-- Botão Opções -->
   <button class="menu-toggle">Opções ☰</button>
 
-  <!-- Menu mobile -->
-  <ul class="mobile-menu">
+  <!-- Links desktop -->
+  <ul class="nav-links">
     <li><a href="menu.html" class="active">Menu</a></li>
     <li><a href="encomendas.html">Encomendas</a></li>
     <li><a href="eventos.html">Eventos</a></li>
@@ -82,36 +66,6 @@
         <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
         Posso ajudar?
       </a>
-    </li>
-    <!-- Filtro também no mobile -->
-    <li>
-      <div class="filtro">
-        <label for="categoria-mobile">Filtrar:</label>
-        <select id="categoria-mobile">
-          <option value="todos">Todos</option>
-          <option value="entradas">Entradas e Petiscos</option>
-          <option value="pequeno-almoco">Pequeno Almoço</option>
-          <option value="carnes">Pratos Carnes</option>
-          <option value="massas">Massas Diverso</option>
-          <option value="bebidas">Bebidas</option>
-          <option value="cervejas">Cervejas Diversas</option>
-          <option value="cocktails">Cocktails</option>
-          <option value="cafe">Café</option>
-          <option value="champanhe">Champanhe</option>
-          <option value="whiskey-velho">Whiskey Velho Dose</option>
-          <option value="whiskey-novo">Whiskey Novo</option>
-          <option value="vinho-tinto">Vinho Tinto</option>
-          <option value="vinho-branco">Vinho Branco Verde</option>
-          <option value="vinho-rose">Vinho Rosé</option>
-          <option value="licores">Licores</option>
-          <option value="cognacs">Cognacs</option>
-          <option value="shots">Shots</option>
-          <option value="sangrias">Sangrias Diversas</option>
-          <option value="vodka-gin">Vodka & Gin</option>
-          <option value="aguardente">Aguardente</option>
-        </select>
-        <button id="limpar-filtro-mobile" class="btn-filtro">Limpar</button>
-      </div>
     </li>
   </ul>
 </nav>
@@ -1618,5 +1572,6 @@
 
 </body>
 </html>
+
 
 
