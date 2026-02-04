@@ -45,6 +45,13 @@ html, body {
   margin-right: 60px; /* move os botões mais para a esquerda */
 }
 
+/* Estilo para o texto "Filtrar" */
+.filtro label {
+  color: #111111;   /* preto elegante */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
 .nav-links li a {
   text-decoration: none;
   color: #111111;
