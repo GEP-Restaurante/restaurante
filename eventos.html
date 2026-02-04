@@ -32,9 +32,7 @@
     <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
     <li>
       <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
-      </a>
+        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;"></a>
     </li>
   </ul>
 
@@ -69,7 +67,59 @@
     </section>
   </main>
 
-  
+   <!-- Script Lightbox + Menu Mobile -->
+  <script>
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const caption = document.querySelector('.caption');
+  const closeBtn = document.querySelector('.close');
+
+  document.querySelectorAll('main img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      caption.textContent = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  // Menu Mobile
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Abre/fecha ao clicar no botão
+  menuToggle.addEventListener('click', () => {
+    if (mobileMenu.style.display === 'flex') {
+      mobileMenu.style.display = 'none';
+    } else {
+      mobileMenu.style.display = 'flex';
+    }
+  });
+
+  // Fecha ao clicar em qualquer link do menu
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+    });
+  });
+
+  // Fecha ao clicar fora do menu
+  document.addEventListener('click', (e) => {
+    if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+      mobileMenu.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
