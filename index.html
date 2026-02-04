@@ -46,7 +46,8 @@
   <!-- Main com fotos do ambiente -->
   <main>
     <section class="ambiente">
-        <div class="galeria">
+      <h2>Ambiente GEP</h2>
+      <div class="galeria">
         <img src="imagens/restaurante8.jpg" alt="Ambiente 8">
         <img src="imagens/restaurante1.jpg" alt="Ambiente 1">
         <img src="imagens/restaurante2.jpg" alt="Ambiente 2">
@@ -55,12 +56,23 @@
         <img src="imagens/restaurante5.jpg" alt="Ambiente 5">
         <img src="imagens/restaurante6.jpg" alt="Ambiente 6">
 		<img src="imagens/restaurante7.jpg" alt="Ambiente 7">        
-        
+        <img src="imagens/restaurante9.jpg" alt="Ambiente 9">
+		<img src="imagens/restaurante10.jpg" alt="Ambiente 10">
 
       </div>
     </section>
 
-    
+    <!-- Menu -->
+    <section id="menu">
+      <h2>Nosso Menu</h2>
+    </section>
+
+    <!-- Eventos -->
+    <section id="eventos">
+      <h2>Eventos</h2>
+      <p>Descobre os eventos especiais e noites temáticas do GEP Restaurante.</p>
+      <button class="btn-eventos">Ver Agenda</button>
+    </section>
 
     <!-- Contactos -->
     <section id="contactos">
@@ -117,7 +129,8 @@
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
 
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
     });
 
@@ -126,30 +139,13 @@
         mobileMenu.style.display = 'none';
       });
     });
-	const menuToggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Abre/fecha menu ao clicar em Opções
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // evita fechar imediatamente
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  // Fecha menu ao clicar em qualquer link
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.style.display = 'none';
+    // Fecha menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+        mobileMenu.style.display = 'none';
+      }
     });
-  });
-
-  // Fecha menu ao clicar fora dele
-  document.addEventListener('click', (e) => {
-    if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
-      mobileMenu.style.display = 'none';
-    }
-  });
-
-	
   </script>
 
 </body>
