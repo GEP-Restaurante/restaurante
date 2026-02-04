@@ -21,16 +21,12 @@
         <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
       </a>
     </div>
-
-    <!-- Botão Opções (mobile) -->
     <button class="menu-toggle">Opções ☰</button>
-
-    <!-- Links desktop -->
     <ul class="nav-links">
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="encomendas.html" class="active">Encomendas</a></li>
       <li><a href="eventos.html">Eventos</a></li>
       <li><a href="contactos.html">Contactos</a></li>
+      <li><a href="encomendas.html" class="active">Encomendas</a></li>
       <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
       <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
       <li>
@@ -40,13 +36,11 @@
         </a>
       </li>
     </ul>
-
-    <!-- Menu mobile -->
     <ul class="mobile-menu">
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="encomendas.html" class="active">Encomendas</a></li>
       <li><a href="eventos.html">Eventos</a></li>
       <li><a href="contactos.html">Contactos</a></li>
+      <li><a href="encomendas.html" class="active">Encomendas</a></li>
       <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
       <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
       <li>
@@ -80,11 +74,14 @@
 
         <label for="observacoes">Observações:</label>
         <textarea id="observacoes"></textarea>
-
-        <button type="submit" class="btn-encomenda">Finalizar Encomenda</button>
       </form>
     </section>
   </main>
+
+  <!-- Botão Finalizar fixo -->
+  <div class="finalizar-container">
+    <button type="submit" form="form-encomenda" class="btn-encomenda">Finalizar Encomenda</button>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -93,9 +90,23 @@
 
   <!-- Script -->
   <script>
-    // Carrinho sincronizado com localStorage
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let carrinho = [];
 
+    // Adicionar item ao carrinho
+    function adicionarItem(id, nome, preco, sugestaoId) {
+      const existente = carrinho.find(item => item.id === id);
+      if (existente) {
+        existente.qtd += 1;
+      } else {
+        carrinho.push({ id, nome, preco, qtd: 1 });
+      }
+      atualizarCarrinho();
+      if (sugestaoId) {
+        document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
+      }
+    }
+
+    // Atualizar carrinho
     function atualizarCarrinho() {
       const lista = document.getElementById('lista-carrinho');
       const totalEl = document.getElementById('total');
@@ -104,15 +115,49 @@
 
       carrinho.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ`;
+
+        const info = document.createElement('span');
+        info.className = 'item-info';
+        info.textContent = `${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ x ${item.qtd}`;
+
+        const actions = document.createElement('div');
+        actions.className = 'item-actions';
+
+        const btnMais = document.createElement('button');
+        btnMais.textContent = '+';
+        btnMais.onclick = () => { item.qtd++; atualizarCarrinho(); };
+
+        const btnMenos = document.createElement('button');
+        btnMenos.textContent = '-';
+        btnMenos.onclick = () => {
+          if (item.qtd > 1) {
+            item.qtd--;
+          } else {
+            carrinho = carrinho.filter(i => i.id !== item.id);
+          }
+          atualizarCarrinho();
+        };
+
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'x';
+        btnRemover.onclick = () => {
+          carrinho = carrinho.filter(i => i.id !== item.id);
+          atualizarCarrinho();
+        };
+
+        actions.appendChild(btnMais);
+        actions.appendChild(btnMenos);
+        actions.appendChild(btnRemover);
+
+        li.appendChild(info);
+        li.appendChild(actions);
         lista.appendChild(li);
-        total += item.preco;
+
+        total += item.preco * item.qtd;
       });
 
       totalEl.textContent = "Total: " + total.toLocaleString('pt-AO') + " KZ";
     }
-
-    atualizarCarrinho();
 
     // Finalizar encomenda → WhatsApp + reset + index
     const form = document.getElementById('form-encomenda');
@@ -124,19 +169,15 @@
 
       let mensagem = `🍴 Encomenda GEP Restaurante\n\nCliente: ${nome}\nTelefone: ${telefone}\n\nItens:\n`;
       carrinho.forEach(item => {
-        mensagem += `- ${item.nome} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
+        mensagem += `- ${item.nome} x${item.qtd} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
       });
       mensagem += `\nTotal: ${document.getElementById('total').textContent}\n\nObservações: ${observacoes}`;
 
       const url = "https://wa.me/244923281469?text=" + encodeURIComponent(mensagem);
       window.open(url, "_blank");
 
-      // Zerar carrinho
       carrinho = [];
-      localStorage.removeItem('carrinho');
       atualizarCarrinho();
-
-      // Redirecionar para index
       window.location.href = "index.html";
     });
 
