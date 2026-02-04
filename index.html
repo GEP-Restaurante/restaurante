@@ -13,19 +13,31 @@
     <img src="imagens/entrada.jpg" alt="Entrada GEP Restaurante" class="header-img">
   </header>
 
-  <!-- Barra de navegação fixa após header -->
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
-      <!-- Logo aponta para index -->
       <a href="index.html">
         <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
       </a>
     </div>
+
+    <!-- Botão Opções (mobile) -->
+    <button class="menu-toggle">Opções ☰</button>
+
+    <!-- Links desktop -->
     <ul class="nav-links">
       <li><a href="#menu">Menu</a></li>
       <li><a href="#eventos">Eventos</a></li>
       <li><a href="#contactos">Contactos</a></li>
-      <!-- Redes sociais abrindo em nova aba -->
+      <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    </ul>
+
+    <!-- Menu mobile -->
+    <ul class="mobile-menu">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#contactos">Contactos</a></li>
       <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
     </ul>
@@ -33,31 +45,23 @@
 
   <!-- Main com fotos do ambiente -->
   <main>
-  
     <section class="ambiente">
-      <h2>Ambiente GEP</h2>
-      <div class="galeria">
+        <div class="galeria">
+        <img src="imagens/restaurante8.jpg" alt="Ambiente 8">
         <img src="imagens/restaurante1.jpg" alt="Ambiente 1">
         <img src="imagens/restaurante2.jpg" alt="Ambiente 2">
         <img src="imagens/restaurante3.jpg" alt="Ambiente 3">
         <img src="imagens/restaurante4.jpg" alt="Ambiente 4">
         <img src="imagens/restaurante5.jpg" alt="Ambiente 5">
         <img src="imagens/restaurante6.jpg" alt="Ambiente 6">
+		<img src="imagens/restaurante7.jpg" alt="Ambiente 7">        
+        <img src="imagens/restaurante9.jpg" alt="Ambiente 9">
+		<img src="imagens/restaurante10.jpg" alt="Ambiente 10">
+
       </div>
     </section>
 
-    <!-- Menu -->
-    <section id="menu">
-      <h2>Nosso Menu</h2>
-      <!-- Aqui entram os blocos de vinhos, licores, cognacs, shots, gin, aguardente, sangrias, cervejas -->
-    </section>
-
-    <!-- Eventos -->
-    <section id="eventos">
-      <h2>Eventos</h2>
-      <p>Descobre os eventos especiais e noites temáticas do GEP Restaurante.</p>
-      <button class="btn-eventos">Ver Agenda</button>
-    </section>
+    
 
     <!-- Contactos -->
     <section id="contactos">
@@ -67,7 +71,6 @@
       <p>📧 Email: geprestaurantegrill@hotmail.com</p>
     </section>
   </main>
-   
 
   <!-- Footer -->
   <footer>
@@ -77,42 +80,54 @@
       <a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a>
     </p>
   </footer>
-  
+
   <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-img" src="" alt="">
-  <div class="caption"></div>
-</div>
-  
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <div class="caption"></div>
+  </div>
+
+  <!-- Script Lightbox + Menu Mobile -->
   <script>
-  // Seleciona elementos
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.querySelector('.lightbox-img');
-  const caption = document.querySelector('.caption');
-  const closeBtn = document.querySelector('.close');
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const caption = document.querySelector('.caption');
+    const closeBtn = document.querySelector('.close');
 
-  // Adiciona evento a todas imagens do main
-  document.querySelectorAll('main img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
-      caption.textContent = img.alt; // usa o alt como detalhe
+    document.querySelectorAll('main img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        caption.textContent = img.alt;
+      });
     });
-  });
 
-  // Fecha ao clicar no botão X
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  // Fecha ao clicar fora da imagem
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
+    closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
-    }
-  });
-</script>
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    // Menu Mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
