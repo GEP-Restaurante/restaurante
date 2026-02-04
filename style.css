@@ -322,7 +322,15 @@ footer a:hover {
 
 .item-actions {
   display: flex;
+  align-items: center;
   gap: 6px;
+}
+
+.item-actions span {
+  min-width: 24px;
+  text-align: center;
+  font-weight: bold;
+  color: #222;
 }
 
 .item-actions button {
@@ -339,6 +347,15 @@ footer a:hover {
 .item-actions button:hover {
   background: #0077cc;
   color: #fff;
+}
+
+/* Total dentro do carrinho */
+#carrinho #total {
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: right;
+  color: #222;
 }
 
 /* ===== Botão Finalizar fixo ===== */
