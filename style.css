@@ -23,20 +23,21 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .navbar .logo img {
-  height: 50px;
+  height: 45px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -50,6 +51,37 @@ html, body {
   color: #FF4C4C; /* coral jovem */
 }
 
+/* Mobile navbar */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px;
+    background: linear-gradient(135deg, #FFD700, #FF4C4C);
+    color: #111111;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+  }
+
+  .nav-links li a:hover {
+    background: linear-gradient(135deg, #FF4C4C, #007BFF);
+    color: #fff;
+    transform: scale(1.05);
+  }
+}
+
 /* Main mobile first */
 main {
   display: flex;
@@ -58,14 +90,21 @@ main {
   padding: 15px;
 }
 
-/* Ajuste automático das imagens no main (1:1 sem cortes) */
+/* Imagens no main ajustadas 1:1 sem cortes */
 main img {
   width: 100%;
-  aspect-ratio: 1 / 1;       /* força proporção quadrada */
+  aspect-ratio: 1 / 1;
   object-fit: contain;       /* mostra a imagem inteira sem cortes */
-  background-color: #000;    /* fundo preto elegante para margens */
+  background-color: #000;    /* fundo preto elegante */
   border-radius: 10px;
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover glamouroso nas imagens */
+main img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 /* Produtos (cards) */
@@ -80,38 +119,38 @@ main img {
 .product h3 {
   font-size: 18px;
   margin: 10px 0;
-  color: #FFD700; /* dourado institucional */
+  color: #FFD700;
 }
 
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #FF4C4C; /* coral jovem */
+  color: #FF4C4C;
   margin-bottom: 10px;
 }
 
 /* Botões glamourosos */
 button, .btn-eventos {
-  background: linear-gradient(135deg, #FFD700, #FF4C4C); /* dourado + coral */
-  color: #111111; /* texto escuro para contraste */
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111111;
   border: none;
   padding: 12px 25px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4); /* brilho dourado */
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
   transition: all 0.3s ease;
 }
 
 button:hover, .btn-eventos:hover {
-  background: linear-gradient(135deg, #FF4C4C, #007BFF); /* coral + azul elétrico */
+  background: linear-gradient(135deg, #FF4C4C, #007BFF);
   color: #fff;
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 76, 76, 0.6); /* brilho coral */
+  box-shadow: 0 6px 16px rgba(255, 76, 76, 0.6);
 }
 
-/* Galeria de fotos */
+/* Galeria */
 .galeria {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +180,45 @@ footer a {
 
 footer a:hover {
   color: #FF4C4C;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+.caption {
+  margin-top: 15px;
+  color: #FFD700;
+  font-size: 18px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #FFD700;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Responsividade */
