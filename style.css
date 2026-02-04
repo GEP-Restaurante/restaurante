@@ -3,11 +3,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* elimina scroll lateral */
+  overflow-x: hidden;
   width: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: #111111; /* fundo preto elegante */
   color: #FFFFFF;
+  padding-top: 80px; /* compensa altura da navbar fixa */
 }
 
 /* Header */
@@ -17,15 +18,17 @@ html, body {
   display: block;
 }
 
-/* Navbar fixa após header */
+/* Navbar fixa em todas as versões */
 .navbar {
   background-color: #FFD700; /* dourado institucional */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* alinha logo + links à esquerda */
   align-items: center;
-  padding: 15px 20px;
-  position: sticky;
+  padding: 15px 20px; /* reduz espaço lateral */
+  position: fixed;   /* fixo no topo */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -33,11 +36,13 @@ html, body {
   height: 45px;
 }
 
+/* Links desktop */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-left: 40px; /* move os botões mais para a esquerda */
 }
 
 .nav-links li a {
@@ -51,34 +56,56 @@ html, body {
   color: #FF4C4C; /* coral jovem */
 }
 
-/* Mobile navbar */
+/* Botão Opções (mobile) */
+.menu-toggle {
+  display: none;
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111111;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Menu mobile */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #111111;
+  padding: 15px;
+  position: absolute;
+  top: 70px; /* abaixo da navbar */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 10px;
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111111;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+}
+
+.mobile-menu li a:hover {
+  background: linear-gradient(135deg, #FF4C4C, #007BFF);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Mobile first */
 @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    margin-top: 10px;
+    display: none; /* esconde links desktop */
   }
-
-  .nav-links li a {
-    display: block;
-    padding: 10px;
-    background: linear-gradient(135deg, #FFD700, #FF4C4C);
-    color: #111111;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
-  }
-
-  .nav-links li a:hover {
-    background: linear-gradient(135deg, #FF4C4C, #007BFF);
-    color: #fff;
-    transform: scale(1.05);
+  .menu-toggle {
+    display: block; /* mostra botão Opções */
   }
 }
 
