@@ -21,7 +21,7 @@
     </a>
   </div>
 
-  <!-- Filtro (mobile e desktop) -->
+  <!-- Filtro integrado na NAV -->
   <div class="filtro filtro-nav">
     <label for="categoria">Filtrar:</label>
     <select id="categoria">
@@ -50,7 +50,7 @@
     <button id="limpar-filtro" class="btn-filtro">Limpar</button>
   </div>
 
-  <!-- Botão Opções -->
+  <!-- Botão Opções dentro da NAV -->
   <button class="menu-toggle">Opções ☰</button>
 
   <!-- Links desktop -->
@@ -69,6 +69,35 @@
     </li>
   </ul>
 </nav>
+
+<!-- Filtro fora do menu (mobile) -->
+<div class="filtro filtro-mobile">
+  <label for="categoria-mobile">Filtrar:</label>
+  <select id="categoria-mobile">
+    <option value="todos">Todos</option>
+    <option value="entradas">Entradas e Petiscos</option>
+    <option value="pequeno-almoco">Pequeno Almoço</option>
+    <option value="carnes">Pratos Carnes</option>
+    <option value="massas">Massas Diverso</option>
+    <option value="bebidas">Bebidas</option>
+    <option value="cervejas">Cervejas Diversas</option>
+    <option value="cocktails">Cocktails</option>
+    <option value="cafe">Café</option>
+    <option value="champanhe">Champanhe</option>
+    <option value="whiskey-velho">Whiskey Velho Dose</option>
+    <option value="whiskey-novo">Whiskey Novo</option>
+    <option value="vinho-tinto">Vinho Tinto</option>
+    <option value="vinho-branco">Vinho Branco Verde</option>
+    <option value="vinho-rose">Vinho Rosé</option>
+    <option value="licores">Licores</option>
+    <option value="cognacs">Cognacs</option>
+    <option value="shots">Shots</option>
+    <option value="sangrias">Sangrias Diversas</option>
+    <option value="vodka-gin">Vodka & Gin</option>
+    <option value="aguardente">Aguardente</option>
+  </select>
+  <button id="limpar-filtro-mobile" class="btn-filtro">Limpar</button>
+</div>
 
   <!-- Conteúdo Menu -->
 <main class="conteudo-principal">
@@ -1572,6 +1601,7 @@
 
 </body>
 </html>
+
 
 
 
