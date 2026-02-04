@@ -103,208 +103,57 @@
 
   <!-- Script Lightbox + Menu Mobile -->
   <script>
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const caption = document.querySelector('.caption');
-    const closeBtn = document.querySelector('.close');
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const caption = document.querySelector('.caption');
+  const closeBtn = document.querySelector('.close');
 
-    document.querySelectorAll('main img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        caption.textContent = img.alt;
-      });
+  document.querySelectorAll('main img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      caption.textContent = img.alt;
     });
+  });
 
-    closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
       lightbox.style.display = 'none';
+    }
+  });
+
+  // Menu Mobile
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Abre/fecha ao clicar no botão
+  menuToggle.addEventListener('click', () => {
+    if (mobileMenu.style.display === 'flex') {
+      mobileMenu.style.display = 'none';
+    } else {
+      mobileMenu.style.display = 'flex';
+    }
+  });
+
+  // Fecha ao clicar em qualquer link do menu
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
     });
+  });
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-
-    // Menu Mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.style.display = 'none';
-      });
-    });
-
-    // Fecha menu ao clicar fora
-    document.addEventListener('click', (e) => {
-      if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
-        mobileMenu.style.display = 'none';
-      }
-    });
-  </script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GEP Restaurante</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Header com imagem de entrada -->
-  <header>
-    <img src="imagens/entrada.jpg" alt="Entrada GEP Restaurante" class="header-img">
-  </header>
-
-  <!-- Barra de navegação -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
-    </a>
-  </div>
-
-  <!-- Botão Opções (mobile) -->
-  <button class="menu-toggle">Opções ☰</button>
-
-  <!-- Links desktop -->
-  <ul class="nav-links">
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#eventos">Eventos</a></li>
-    <li><a href="#contactos">Contactos</a></li>
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <li><a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer"> <img src="imagens/whatsapp-logo.jpg" alt="WhatsApp" style="height:18px;vertical-align:middle;margin-right:6px;">Posso ajudar?</a>
-    </li>
-  </ul>
-
-  <!-- Menu mobile -->
-  <ul class="mobile-menu">
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#eventos">Eventos</a></li>
-    <li><a href="#contactos">Contactos</a></li>
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <!-- Botão WhatsApp mobile -->
-    <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="WhatsApp" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
-      </a>
-    </li>
-  </ul>
-</nav>
-
-  <!-- Main com fotos do ambiente -->
-  
-  <main>
-    <section class="ambiente">
-    
-      <div class="galeria">
-        <img src="imagens/restaurante8.jpg" alt="Promoção GEP">
-        <img src="imagens/restaurante1.jpg" alt="Ambiente 1">
-        <img src="imagens/restaurante2.jpg" alt="Ambiente 2">
-        <img src="imagens/restaurante3.jpg" alt="Uma noite bem passada">
-        <img src="imagens/restaurante4.jpg" alt="Uma tarde bem passada">
-        <img src="imagens/restaurante5.jpg" alt="Ambiente 5">
-        <img src="imagens/restaurante6.jpg" alt="Ambiente 6">
-		<img src="imagens/restaurante7.jpg" alt="Ambiente 7">        
-        <img src="imagens/restaurante9.jpg" alt="Ambiente 9">
-		<img src="imagens/restaurante10.jpg" alt="Ambiente 10">
-		
-
-      </div>
-    </section>
-
-   
-    
-  </main>
-
-  <!-- Footer -->
-  
-  <footer>
-
-  <!-- Contactos -->
-    <section id="contactos">
-      <h2>Contactos</h2>
-      <p>📍 Centralidade Kilamba - G15 Aberto de Segunda a Domingo, das 8h às 22h. Entrega ao domicílio das 10h às 21h30</p>
-      <p>📞 Telefone: +244 933 813 082 - 📞 Reservas: +244 997 237 124 - 📧 Email: geprestaurantegrill@hotmail.com</p>
-	     
-    </section>
-   
-    <p>
-      <a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-      <a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a>
-	  <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer"> <img src="imagens/whatsapp-logo.jpg" alt="WhatsApp" style="height:18px;vertical-align:middle;margin-right:6px;">Posso ajudar?</a>
-    </p>
-  </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="">
-    <div class="caption"></div>
-  </div>
-
-  <!-- Script Lightbox + Menu Mobile -->
-  <script>
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const caption = document.querySelector('.caption');
-    const closeBtn = document.querySelector('.close');
-
-    document.querySelectorAll('main img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        caption.textContent = img.alt;
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-
-    // Menu Mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.style.display = 'none';
-      });
-    });
-
-    // Fecha menu ao clicar fora
-    document.addEventListener('click', (e) => {
-      if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
-        mobileMenu.style.display = 'none';
-      }
-    });
-  </script>
+  // Fecha ao clicar fora do menu
+  document.addEventListener('click', (e) => {
+    if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+      mobileMenu.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
-
