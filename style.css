@@ -1,0 +1,161 @@
+/* style.css - versão mobile first */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111111; /* Preto elegante */
+  color: #FFFFFF; /* Texto branco para contraste */
+}
+
+/* Header */
+.header-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navbar fixa abaixo do header */
+.navbar {
+  background-color: #FFD700; /* Dourado institucional */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #111111;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #FF4C4C; /* Coral jovem */
+}
+
+/* Main mobile first */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Produtos (cards) */
+.product {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.product img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #FFD700; /* Dourado institucional */
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FF4C4C; /* Coral jovem */
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007BFF; /* Azul elétrico */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #FF4C4C;
+}
+
+/* Galeria de fotos */
+.galeria {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 30%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Botão eventos */
+.btn-eventos {
+  background-color: #FF4C4C;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-eventos:hover {
+  background-color: #007BFF;
+}
+
+/* Footer */
+footer {
+  background-color: #FFD700;
+  color: #111111;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product {
+    flex: 1 1 calc(50% - 40px);
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product {
+    flex: 1 1 calc(25% - 40px);
+    max-width: 280px;
+  }
+}
