@@ -58,6 +58,16 @@ main {
   padding: 15px;
 }
 
+/* Ajuste automático das imagens no main (1:1 sem cortes) */
+main img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* força proporção quadrada */
+  object-fit: contain;       /* mostra a imagem inteira sem cortes */
+  background-color: #000;    /* fundo preto elegante para margens */
+  border-radius: 10px;
+  display: block;
+}
+
 /* Produtos (cards) */
 .product {
   background-color: #1a1a1a;
@@ -65,12 +75,6 @@ main {
   padding: 15px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.product img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 8px;
 }
 
 .product h3 {
@@ -117,12 +121,6 @@ button:hover, .btn-eventos:hover {
 
 .galeria img {
   flex: 1 1 calc(33% - 20px);
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
 }
 
 /* Footer */
