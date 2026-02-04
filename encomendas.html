@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encomendas | GEP Restaurante</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="imagens/gep.logo.jpg">
+</head>
+<body>
+
+  <!-- Header institucional -->
+  <header>
+    <img src="imagens/entrada.jpg" alt="Entrada GEP Restaurante" class="header-img">
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
+      </a>
+    </div>
+    <button class="menu-toggle">Opções ☰</button>
+    <ul class="nav-links">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+      <li><a href="encomendas.html" class="active">Encomendas</a></li>
+      <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
+      <li>
+        <a href="https://wa.me/244923281469" target="_blank">
+          <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
+          Posso ajudar?
+        </a>
+      </li>
+    </ul>
+    <ul class="mobile-menu">
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+      <li><a href="encomendas.html" class="active">Encomendas</a></li>
+      <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
+      <li>
+        <a href="https://wa.me/244923281469" target="_blank">
+          <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
+          Posso ajudar?
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Secção Encomendas -->
+  <main>
+    <section id="encomendas">
+      <h2>Finalize a sua Encomenda</h2>
+
+      <!-- Carrinho -->
+      <div id="carrinho">
+        <h3>Seu Carrinho</h3>
+        <ul id="lista-carrinho"></ul>
+        <p id="total">Total: 0,00 KZ</p>
+      </div>
+
+      <!-- Formulário -->
+      <form id="form-encomenda">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" required>
+
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes"></textarea>
+
+        <button type="submit" class="btn-encomenda">Finalizar Encomenda</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 GEP Restaurante | Since 2018</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    let carrinho = [];
+
+    // Função para adicionar itens (usada também no menu.html)
+    function adicionarItem(id, nome, preco, sugestaoId) {
+      carrinho.push({ id, nome, preco });
+      atualizarCarrinho();
+      if (sugestaoId) {
+        document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
+      }
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById('lista-carrinho');
+      const totalEl = document.getElementById('total');
+      lista.innerHTML = '';
+      let total = 0;
+
+      carrinho.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ`;
+        lista.appendChild(li);
+        total += item.preco;
+      });
+
+      totalEl.textContent = "Total: " + total.toLocaleString('pt-AO') + " KZ";
+    }
+
+    // Finalizar encomenda → WhatsApp + reset + index
+    const form = document.getElementById('form-encomenda');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const observacoes = document.getElementById('observacoes').value;
+
+      let mensagem = `🍴 Encomenda GEP Restaurante\n\nCliente: ${nome}\nTelefone: ${telefone}\n\nItens:\n`;
+      carrinho.forEach(item => {
+        mensagem += `- ${item.nome} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
+      });
+      mensagem += `\nTotal: ${document.getElementById('total').textContent}\n\nObservações: ${observacoes}`;
+
+      const url = "https://wa.me/244923281469?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+
+      // Zerar carrinho
+      carrinho = [];
+      atualizarCarrinho();
+
+      // Redirecionar para index
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
