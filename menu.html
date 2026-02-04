@@ -1492,7 +1492,7 @@
   
   
 <script>
-  // Menu Mobile toggle
+  // ===== Menu Mobile toggle =====
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -1513,7 +1513,7 @@
     }
   });
 
-  // Filtro de categorias
+  // ===== Filtro de categorias =====
   const filtroDesktop = document.getElementById('categoria');
   const filtroMobile = document.getElementById('categoria-mobile');
   const limparBtnDesktop = document.getElementById('limpar-filtro');
@@ -1543,15 +1543,21 @@
     aplicarFiltro('todos');
   });
 
-  // Carrinho sincronizado com localStorage
+  // ===== Carrinho sincronizado com localStorage =====
   let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
   function adicionarItem(id, nome, preco, sugestaoId) {
-    carrinho.push({ id, nome, preco });
+    const existente = carrinho.find(item => item.id === id);
+    if (existente) {
+      existente.qtd += 1;
+    } else {
+      carrinho.push({ id, nome, preco, qtd: 1 });
+    }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     if (sugestaoId) {
       document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
     }
+    atualizarCarrinho();
   }
 
   function atualizarCarrinho() {
@@ -1564,17 +1570,40 @@
 
     carrinho.forEach(item => {
       const li = document.createElement('li');
-      li.textContent = `${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ`;
+      li.innerHTML = `
+        <span class="item-info">${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ</span>
+        <div class="item-actions">
+          <button onclick="alterarQtd('${item.id}', -1)">-</button>
+          <span>${item.qtd}</span>
+          <button onclick="alterarQtd('${item.id}', 1)">+</button>
+          <button onclick="removerItem('${item.id}')">x</button>
+        </div>
+      `;
       lista.appendChild(li);
-      total += item.preco;
+      total += item.preco * item.qtd;
     });
 
     totalEl.textContent = "Total: " + total.toLocaleString('pt-AO') + " KZ";
   }
 
+  function alterarQtd(id, delta) {
+    const item = carrinho.find(i => i.id === id);
+    if (!item) return;
+    item.qtd += delta;
+    if (item.qtd <= 0) carrinho = carrinho.filter(i => i.id !== id);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    atualizarCarrinho();
+  }
+
+  function removerItem(id) {
+    carrinho = carrinho.filter(i => i.id !== id);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    atualizarCarrinho();
+  }
+
   atualizarCarrinho();
 
-  // Finalizar encomenda → WhatsApp + reset + index
+  // ===== Finalizar encomenda → WhatsApp + reset + index =====
   const form = document.getElementById('form-encomenda');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -1585,7 +1614,7 @@
 
       let mensagem = `🍴 Encomenda GEP Restaurante\n\nCliente: ${nome}\nTelefone: ${telefone}\n\nItens:\n`;
       carrinho.forEach(item => {
-        mensagem += `- ${item.nome} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
+        mensagem += `- ${item.nome} x${item.qtd} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
       });
       mensagem += `\nTotal: ${document.getElementById('total').textContent}\n\nObservações: ${observacoes}`;
 
@@ -1601,24 +1630,11 @@
       window.location.href = "index.html";
     });
   }
-
-	function adicionarItem(id, nome, preco, sugestaoId) {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const existente = carrinho.find(item => item.id === id);
-  if (existente) {
-    existente.qtd += 1;
-  } else {
-    carrinho.push({ id, nome, preco, qtd: 1 });
-  }
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
-  if (sugestaoId) {
-    document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
-  }
-}
 </script>
 
 </body>
 </html>
+
 
 
 
