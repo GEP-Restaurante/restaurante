@@ -57,6 +57,7 @@ html, body {
 }
 
 /* Botão Opções (mobile) */
+/* Botão Opções (mobile) */
 .menu-toggle {
   display: none;
   background: linear-gradient(135deg, #FFD700, #FF4C4C);
@@ -67,7 +68,7 @@ html, body {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
-  margin-left: auto; /* força alinhamento à direita */
+  margin-left: 3cm; /* afasta 3cm do logo na versão mobile */
 }
 
 /* Menu mobile */
