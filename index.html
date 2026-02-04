@@ -55,8 +55,7 @@
         <img src="imagens/restaurante5.jpg" alt="Ambiente 5">
         <img src="imagens/restaurante6.jpg" alt="Ambiente 6">
 		<img src="imagens/restaurante7.jpg" alt="Ambiente 7">        
-        <img src="imagens/restaurante9.jpg" alt="Ambiente 9">
-		<img src="imagens/restaurante10.jpg" alt="Ambiente 10">
+        
 
       </div>
     </section>
@@ -127,6 +126,30 @@
         mobileMenu.style.display = 'none';
       });
     });
+	const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Abre/fecha menu ao clicar em Opções
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita fechar imediatamente
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Fecha menu ao clicar em qualquer link
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+    });
+  });
+
+  // Fecha menu ao clicar fora dele
+  document.addEventListener('click', (e) => {
+    if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+      mobileMenu.style.display = 'none';
+    }
+  });
+
+	
   </script>
 
 </body>
