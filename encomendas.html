@@ -101,10 +101,11 @@
       carrinho.forEach(item => {
         const li = document.createElement('li');
         li.innerHTML = `
-          <span class="item-info">${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ x ${item.qtd}</span>
+          <span class="item-info">${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ</span>
           <div class="item-actions">
-            <button onclick="alterarQtd('${item.id}', 1)">+</button>
             <button onclick="alterarQtd('${item.id}', -1)">-</button>
+            <span>${item.qtd}</span>
+            <button onclick="alterarQtd('${item.id}', 1)">+</button>
             <button onclick="removerItem('${item.id}')">x</button>
           </div>
         `;
