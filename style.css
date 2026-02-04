@@ -22,7 +22,7 @@ html, body {
 .navbar {
   background-color: #FFD700; /* dourado institucional */
   display: flex;
-  justify-content: space-between; /* logo à esquerda, botão opções à direita */
+  justify-content: space-between; /* logo à esquerda, filtro e opções à direita */
   align-items: center;
   padding: 10px 20px; /* altura mais compacta */
   position: fixed;
@@ -30,6 +30,7 @@ html, body {
   left: 0;
   width: 100%;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .navbar .logo img {
@@ -42,14 +43,36 @@ html, body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-right: 60px; /* move os botões mais para a esquerda */
+  margin-left: auto;
 }
 
 /* Estilo para o texto "Filtrar" */
-.filtro label {
+.filtro-nav label {
   color: #111111;   /* preto elegante */
   font-weight: bold;
   margin-right: 8px;
+}
+
+.filtro-nav select {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-filtro {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111111;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+}
+
+.btn-filtro:hover {
+  background: #0077cc;
+  color: #fff;
 }
 
 .nav-links li a {
@@ -63,7 +86,7 @@ html, body {
   color: #FF4C4C; /* coral jovem */
 }
 
-/* Botão Opções (mobile) */
+/* Botão Opções */
 .menu-toggle {
   display: none;
   background: linear-gradient(135deg, #FFD700, #FF4C4C);
@@ -74,7 +97,6 @@ html, body {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
-  margin-left: 3cm; /* afasta 3cm do logo na versão mobile */
 }
 
 /* Menu mobile */
@@ -112,8 +134,36 @@ html, body {
   .nav-links {
     display: none; /* esconde links desktop */
   }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .filtro-nav {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filtro-nav select {
+    flex: 1;
+  }
+
+  .btn-filtro {
+    flex: 0 0 auto;
+  }
+
   .menu-toggle {
-    display: block; /* mostra botão Opções */
+    display: block;
+    align-self: flex-start;
+    margin-top: 10px;
   }
 }
 
@@ -387,4 +437,3 @@ footer a:hover {
   background: #0077cc;
   color: #fff;
 }
-
