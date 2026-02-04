@@ -1,10 +1,13 @@
-/* style.css - versão mobile first */
+/* style.css - versão mobile first com glamour */
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* elimina scroll lateral */
+  width: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #111111; /* Preto elegante */
-  color: #FFFFFF; /* Texto branco para contraste */
+  background-color: #111111; /* fundo preto elegante */
+  color: #FFFFFF;
 }
 
 /* Header */
@@ -14,9 +17,9 @@ body {
   display: block;
 }
 
-/* Navbar fixa abaixo do header */
+/* Navbar fixa após header */
 .navbar {
-  background-color: #FFD700; /* Dourado institucional */
+  background-color: #FFD700; /* dourado institucional */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +47,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #FF4C4C; /* Coral jovem */
+  color: #FF4C4C; /* coral jovem */
 }
 
 /* Main mobile first */
@@ -73,61 +76,53 @@ main {
 .product h3 {
   font-size: 18px;
   margin: 10px 0;
-  color: #FFD700; /* Dourado institucional */
+  color: #FFD700; /* dourado institucional */
 }
 
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #FF4C4C; /* Coral jovem */
+  color: #FF4C4C; /* coral jovem */
   margin-bottom: 10px;
 }
 
-button {
-  background-color: #007BFF; /* Azul elétrico */
-  color: #fff;
+/* Botões glamourosos */
+button, .btn-eventos {
+  background: linear-gradient(135deg, #FFD700, #FF4C4C); /* dourado + coral */
+  color: #111111; /* texto escuro para contraste */
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4); /* brilho dourado */
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #FF4C4C;
+button:hover, .btn-eventos:hover {
+  background: linear-gradient(135deg, #FF4C4C, #007BFF); /* coral + azul elétrico */
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 76, 76, 0.6); /* brilho coral */
 }
 
 /* Galeria de fotos */
 .galeria {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
 }
 
 .galeria img {
-  width: 30%;
+  flex: 1 1 calc(33% - 20px);
   border-radius: 10px;
   transition: transform 0.3s;
 }
 
 .galeria img:hover {
   transform: scale(1.05);
-}
-
-/* Botão eventos */
-.btn-eventos {
-  background-color: #FF4C4C;
-  color: #FFFFFF;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.btn-eventos:hover {
-  background-color: #007BFF;
 }
 
 /* Footer */
@@ -137,6 +132,17 @@ footer {
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+}
+
+footer a {
+  color: #111111;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #FF4C4C;
 }
 
 /* Responsividade */
