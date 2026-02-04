@@ -71,51 +71,51 @@
   </ul>
 
   <!-- Menu mobile -->
-  <ul class="mobile-menu">
-    <!-- Filtro também disponível no mobile -->
-    <li>
-      <div class="filtro">
-        <label for="categoria-mobile">Filtrar:</label>
-        <select id="categoria-mobile">
-          <option value="todos">Todos</option>
-          <option value="entradas">Entradas e Petiscos</option>
-          <option value="pequeno-almoco">Pequeno Almoço</option>
-          <option value="carnes">Pratos Carnes</option>
-          <option value="massas">Massas Diverso</option>
-          <option value="bebidas">Bebidas</option>
-          <option value="cervejas">Cervejas Diversas</option>
-          <option value="cocktails">Cocktails</option>
-          <option value="cafe">Café</option>
-          <option value="champanhe">Champanhe</option>
-          <option value="whiskey-velho">Whiskey Velho Dose</option>
-          <option value="whiskey-novo">Whiskey Novo</option>
-          <option value="vinho-tinto">Vinho Tinto</option>
-          <option value="vinho-branco">Vinho Branco Verde</option>
-          <option value="vinho-rose">Vinho Rosé</option>
-          <option value="licores">Licores</option>
-          <option value="cognacs">Cognacs</option>
-          <option value="shots">Shots</option>
-          <option value="sangrias">Sangrias Diversas</option>
-          <option value="vodka-gin">Vodka & Gin</option>
-          <option value="aguardente">Aguardente</option>
-        </select>
-        <button id="limpar-filtro-mobile" class="btn-filtro">Limpar</button>
-      </div>
-    </li>
+<ul class="mobile-menu">
+  <li>
+    <div class="filtro">
+      <label for="categoria-mobile">Filtrar:</label>
+      <select id="categoria-mobile">
+        <option value="todos">Todos</option>
+        <option value="entradas">Entradas e Petiscos</option>
+        <option value="pequeno-almoco">Pequeno Almoço</option>
+        <option value="carnes">Pratos Carnes</option>
+        <option value="massas">Massas Diverso</option>
+        <option value="bebidas">Bebidas</option>
+        <option value="cervejas">Cervejas Diversas</option>
+        <option value="cocktails">Cocktails</option>
+        <option value="cafe">Café</option>
+        <option value="champanhe">Champanhe</option>
+        <option value="whiskey-velho">Whiskey Velho Dose</option>
+        <option value="whiskey-novo">Whiskey Novo</option>
+        <option value="vinho-tinto">Vinho Tinto</option>
+        <option value="vinho-branco">Vinho Branco Verde</option>
+        <option value="vinho-rose">Vinho Rosé</option>
+        <option value="licores">Licores</option>
+        <option value="cognacs">Cognacs</option>
+        <option value="shots">Shots</option>
+        <option value="sangrias">Sangrias Diversas</option>
+        <option value="vodka-gin">Vodka & Gin</option>
+        <option value="aguardente">Aguardente</option>
+      </select>
+      <button id="limpar-filtro-mobile" class="btn-filtro">Limpar</button>
+    </div>
+  </li>
 
-    <li><a href="menu.html">Menu</a></li>
-	<li><a href="encomendas.html">Encomendas</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contactos.html">Contactos</a></li>    
-    <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-    <li>
-      <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-        <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
-        Posso ajudar?
-      </a>
-    </li>
-  </ul>
+  <li><a href="menu.html">Menu</a></li>
+  <li><a href="encomendas.html">Encomendas</a></li>
+  <li><a href="eventos.html">Eventos</a></li>
+  <li><a href="contactos.html">Contactos</a></li>
+  <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+  <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
+  <li>
+    <a href="https://wa.me/244923281469" target="_blank">
+      <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;">
+      Posso ajudar?
+    </a>
+  </li>
+</ul>
+
 </nav>
 
 
@@ -1493,19 +1493,16 @@
 
   
   
-  <script>
-  // Menu Mobile
+<script>
+  // Menu Mobile toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
 
   menuToggle.addEventListener('click', () => {
-    if (mobileMenu.style.display === 'flex') {
-      mobileMenu.style.display = 'none';
-    } else {
-      mobileMenu.style.display = 'flex';
-    }
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
   });
 
+  // Fecha menu ao clicar em link ou fora
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.style.display = 'none';
@@ -1518,7 +1515,7 @@
     }
   });
 
-  // Filtro de categorias (desktop + mobile)
+  // Filtro de categorias
   const filtroDesktop = document.getElementById('categoria');
   const filtroMobile = document.getElementById('categoria-mobile');
   const limparBtnDesktop = document.getElementById('limpar-filtro');
@@ -1535,37 +1532,76 @@
     });
   }
 
-  if (filtroDesktop) {
-    filtroDesktop.addEventListener('change', () => {
-      aplicarFiltro(filtroDesktop.value);
-    });
-  }
+  if (filtroDesktop) filtroDesktop.addEventListener('change', () => aplicarFiltro(filtroDesktop.value));
+  if (filtroMobile) filtroMobile.addEventListener('change', () => aplicarFiltro(filtroMobile.value));
 
-  if (filtroMobile) {
-    filtroMobile.addEventListener('change', () => {
-      aplicarFiltro(filtroMobile.value);
-    });
-  }
+  if (limparBtnDesktop) limparBtnDesktop.addEventListener('click', () => {
+    filtroDesktop.value = 'todos';
+    aplicarFiltro('todos');
+  });
 
-  // Função limpar filtro (desktop)
-  if (limparBtnDesktop) {
-    limparBtnDesktop.addEventListener('click', () => {
-      filtroDesktop.value = 'todos';
-      aplicarFiltro('todos');
-    });
-  }
+  if (limparBtnMobile) limparBtnMobile.addEventListener('click', () => {
+    filtroMobile.value = 'todos';
+    aplicarFiltro('todos');
+  });
 
-  // Função limpar filtro (mobile)
-  if (limparBtnMobile) {
-    limparBtnMobile.addEventListener('click', () => {
-      filtroMobile.value = 'todos';
-      aplicarFiltro('todos');
-    });
-  }
+  // Carrinho sincronizado com localStorage
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-  // Função adicionarItem (placeholder para carrinho)
   function adicionarItem(id, nome, preco, sugestaoId) {
-    document.getElementById(sugestaoId).innerHTML = nome + " adicionado ao carrinho!";
+    carrinho.push({ id, nome, preco });
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    if (sugestaoId) {
+      document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
+    }
+  }
+
+  function atualizarCarrinho() {
+    const lista = document.getElementById('lista-carrinho');
+    const totalEl = document.getElementById('total');
+    if (!lista || !totalEl) return; // só existe em encomendas.html
+
+    lista.innerHTML = '';
+    let total = 0;
+
+    carrinho.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ`;
+      lista.appendChild(li);
+      total += item.preco;
+    });
+
+    totalEl.textContent = "Total: " + total.toLocaleString('pt-AO') + " KZ";
+  }
+
+  atualizarCarrinho();
+
+  // Finalizar encomenda → WhatsApp + reset + index
+  const form = document.getElementById('form-encomenda');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const observacoes = document.getElementById('observacoes').value;
+
+      let mensagem = `🍴 Encomenda GEP Restaurante\n\nCliente: ${nome}\nTelefone: ${telefone}\n\nItens:\n`;
+      carrinho.forEach(item => {
+        mensagem += `- ${item.nome} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
+      });
+      mensagem += `\nTotal: ${document.getElementById('total').textContent}\n\nObservações: ${observacoes}`;
+
+      const url = "https://wa.me/244923281469?text=" + encodeURIComponent(mensagem);
+      window.open(url, "_blank");
+
+      // Zerar carrinho
+      carrinho = [];
+      localStorage.removeItem('carrinho');
+      atualizarCarrinho();
+
+      // Redirecionar para index
+      window.location.href = "index.html";
+    });
   }
 </script>
 
