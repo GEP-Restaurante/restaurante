@@ -214,25 +214,1376 @@
     <li><a href="pedidos.html">Pedidos</a></li>
     <li><a href="eventos.html">Eventos</a></li>
     <li><a href="contactos.html">Contactos</a></li>
+	<li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
   </ul>
 
   <!-- Produtos -->
   <main>
     <div class="product" data-categoria="entradas">
-      <h3>Gambas Panados</h3>
-      <p class="price">14.290,00 KZ</p>
-      <button onclick="adicionarItem('gambas-panados','Gambas Panados',14290)">Adicionar</button>
-    </div>
-    <div class="product" data-categoria="carnes">
-      <h3>Bife da Casa</h3>
-      <p class="price">9.500,00 KZ</p>
-      <button onclick="adicionarItem('bife-casa','Bife da Casa',9500)">Adicionar</button>
-    </div>
-    <div class="product" data-categoria="bebidas">
-      <h3>Coca-Cola</h3>
-      <p class="price">1.200,00 KZ</p>
-      <button onclick="adicionarItem('coca-cola','Coca-Cola',1200)">Adicionar</button>
-    </div>
+    <img src="imagens/gambas-panados.jpg" alt="Gambas Panados">
+    <h3>Gambas Panados</h3>
+    <div class="price" data-preco="14290">14.290,00 KZ</div>
+    <button onclick="adicionarItem('e001','Gambas Panados',14290,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/gambas-alho.jpg" alt="Gambas ao Alho">
+    <h3>Gambas ao Alho</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('e002','Gambas ao Alho',16890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/gambas-natural.jpg" alt="Gambas Natural">
+    <h3>Gambas Natural</h3>
+    <div class="price" data-preco="14890">14.890,00 KZ</div>
+    <button onclick="adicionarItem('e003','Gambas Natural',14890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/camarao-natural.jpg" alt="Camarão Natural">
+    <h3>Camarão Natural</h3>
+    <div class="price" data-preco="9890">9.890,00 KZ</div>
+    <button onclick="adicionarItem('e004','Camarão Natural',9890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/camarao-queijo.jpg" alt="Camarão com Molho de Queijo">
+    <h3>Camarão com Molho de Queijo</h3>
+    <div class="price" data-preco="10890">10.890,00 KZ</div>
+    <button onclick="adicionarItem('e005','Camarão com Molho de Queijo',10890,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/camarao-alho.jpg" alt="Camarão ao Alho">
+    <h3>Camarão ao Alho</h3>
+    <div class="price" data-preco="11890">11.890,00 KZ</div>
+    <button onclick="adicionarItem('e006','Camarão ao Alho',11890,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/tiras-vitela.jpg" alt="Tiras de Vitela ao Alho">
+    <h3>Tiras de Vitela ao Alho</h3>
+    <div class="price" data-preco="12890">12.890,00 KZ</div>
+    <button onclick="adicionarItem('e007','Tiras de Vitela ao Alho',12890,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/tiras-picanha.jpg" alt="Tiras de Picanha">
+    <h3>Tiras de Picanha</h3>
+    <div class="price" data-preco="13890">13.890,00 KZ</div>
+    <button onclick="adicionarItem('e008','Tiras de Picanha',13890,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/asas-barbecue.jpg" alt="Asinhas Bravas ao Molho de Barbecue">
+    <h3>Asinhas Bravas ao Molho de Barbecue</h3>
+    <div class="price" data-preco="6890">6.890,00 KZ</div>
+    <button onclick="adicionarItem('e009','Asinhas Bravas ao Molho de Barbecue',6890,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/frango-passarinho.jpg" alt="Frango a Passarinho">
+    <h3>Frango a Passarinho</h3>
+    <div class="price" data-preco="6890">6.890,00 KZ</div>
+    <button onclick="adicionarItem('e010','Frango a Passarinho',6890,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/pica-pau.jpg" alt="Pica Pau">
+    <h3>Pica Pau</h3>
+    <div class="price" data-preco="8590">8.590,00 KZ</div>
+    <button onclick="adicionarItem('e011','Pica Pau',8590,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/moelas.jpg" alt="Moelas Estufadas">
+    <h3>Moelas Estufadas</h3>
+    <div class="price" data-preco="6470">6.470,00 KZ</div>
+    <button onclick="adicionarItem('e012','Moelas Estufadas',6470,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/dobradinha.jpg" alt="Dobradinha à Moda do Brasil">
+    <h3>Dobradinha à Moda do Brasil</h3>
+    <div class="price" data-preco="6420">6.420,00 KZ</div>
+    <button onclick="adicionarItem('e013','Dobradinha à Moda do Brasil',6420,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/peixe-dourado.jpg" alt="Peixe Dourado">
+    <h3>Peixe Dourado</h3>
+    <div class="price" data-preco="6420">6.420,00 KZ</div>
+    <button onclick="adicionarItem('e014','Peixe Dourado',6420,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/combinado-americano.jpg" alt="Combinado do Americano">
+    <h3>Combinado do Americano</h3>
+    <div class="price" data-preco="5670">5.670,00 KZ</div>
+    <button onclick="adicionarItem('e015','Combinado do Americano',5670,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+    <div class="product" data-categoria="entradas">
+    <img src="imagens/francesinha.jpg" alt="Francesinha">
+    <h3>Francesinha</h3>
+    <div class="price" data-preco="7890">7.890,00 KZ</div>
+    <button onclick="adicionarItem('e016','Francesinha',7890,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
+
+  <div class="product" data-categoria="entradas">
+    <img src="imagens/burrito.jpg" alt="Burrito">
+    <h3>Burrito</h3>
+    <div class="price" data-preco="5890">5.890,00 KZ</div>
+    <button onclick="adicionarItem('e017','Burrito',5890,'sug017')">Adicionar</button>
+    <div class="sugestao" id="sug017"></div>
+  </div>
+
+ <!-- Pequeno Almoço -->
+ 
+  <div class="product" data-categoria="matabicho">
+    <img src="imagens/omelete-composto.jpg" alt="Omelete Composto">
+    <h3>Omelete Composto</h3>
+    <div class="price" data-preco="2890">2.890,00 KZ</div>
+    <button onclick="adicionarItem('m001','Omelete Composto',2890,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="matabicho">
+    <img src="imagens/prego-prato.jpg" alt="Prego no Prato">
+    <h3>Prego no Prato</h3>
+    <div class="price" data-preco="9890">9.890,00 KZ</div>
+    <button onclick="adicionarItem('m002','Prego no Prato',9890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="matabicho">
+    <img src="imagens/bifanas-prato.jpg" alt="Bifanas no Prato">
+    <h3>Bifanas no Prato</h3>
+    <div class="price" data-preco="9789">9.789,00 KZ</div>
+    <button onclick="adicionarItem('m003','Bifanas no Prato',9789,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="matabicho">
+    <img src="imagens/sopa-feijao.jpg" alt="Sopa de Feijão">
+    <h3>Sopa de Feijão</h3>
+    <div class="price" data-preco="2890">2.890,00 KZ</div>
+    <button onclick="adicionarItem('m004','Sopa de Feijão',2890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="matabicho">
+    <img src="imagens/sopa-legumes.jpg" alt="Sopa de Legumes">
+    <h3>Sopa de Legumes</h3>
+    <div class="price" data-preco="3990">3.990,00 KZ</div>
+    <button onclick="adicionarItem('m005','Sopa de Legumes',3990,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <!-- Pratos Carnes -->
+  
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/tabua-supremo-moda.jpg" alt="Tábua Supremo à Moda">
+    <h3>Tábua Supremo à Moda</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('c001','Tábua Supremo à Moda',22890,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/tabua-supremo-gep.jpg" alt="Tábua Supremo à GEP">
+    <h3>Tábua Supremo à GEP</h3>
+    <div class="price" data-preco="29890">29.890,00 KZ</div>
+    <button onclick="adicionarItem('c002','Tábua Supremo à GEP',29890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-milanesa.jpg" alt="Bife à Milanesa">
+    <h3>Bife à Milanesa</h3>
+    <div class="price" data-preco="12890">12.890,00 KZ</div>
+    <button onclick="adicionarItem('c003','Bife à Milanesa',12890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-roule.jpg" alt="Bife à Roule">
+    <h3>Bife à Roule</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('c004','Bife à Roule',16890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-guilho.jpg" alt="Bife ao Guilho">
+    <h3>Bife ao Guilho</h3>
+    <div class="price" data-preco="14890">14.890,00 KZ</div>
+    <button onclick="adicionarItem('c005','Bife ao Guilho',14890,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-camoes.jpg" alt="Bife à Camões">
+    <h3>Bife à Camões</h3>
+    <div class="price" data-preco="14890">14.890,00 KZ</div>
+    <button onclick="adicionarItem('c006','Bife à Camões',14890,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-camarao.jpg" alt="Bife ao Molho de Camarão">
+    <h3>Bife ao Molho de Camarão</h3>
+    <div class="price" data-preco="15890">15.890,00 KZ</div>
+    <button onclick="adicionarItem('c007','Bife ao Molho de Camarão',15890,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bifinhos-vitela.jpg" alt="Bifinhos de Vitela à Champion">
+    <h3>Bifinhos de Vitela à Champion</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('c008','Bifinhos de Vitela à Champion',16890,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bifinhos-frango.jpg" alt="Bifinhos de Frango à Keve">
+    <h3>Bifinhos de Frango à Keve</h3>
+    <div class="price" data-preco="12890">12.890,00 KZ</div>
+    <button onclick="adicionarItem('c009','Bifinhos de Frango à Keve',12890,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/lombinhos-mar.jpg" alt="Lombinhos de Frutos do Mar">
+    <h3>Lombinhos de Frutos do Mar</h3>
+    <div class="price" data-preco="24660">24.660,00 KZ</div>
+    <button onclick="adicionarItem('c010','Lombinhos de Frutos do Mar',24660,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/bife-portuguesa.jpg" alt="Bife à Portuguesa à Moda GEP">
+    <h3>Bife à Portuguesa à Moda GEP</h3>
+    <div class="price" data-preco="13890">13.890,00 KZ</div>
+    <button onclick="adicionarItem('c011','Bife à Portuguesa à Moda GEP',13890,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/picanha-gep.jpg" alt="Picanha à Moda GEP">
+    <h3>Picanha à Moda GEP</h3>
+    <div class="price" data-preco="14930">14.930,00 KZ</div>
+    <button onclick="adicionarItem('c012','Picanha à Moda GEP',14930,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/picanha-brasileira.jpg" alt="Picanha Brasileira">
+    <h3>Picanha Brasileira</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('c013','Picanha Brasileira',16890,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/arroz-marisco.jpg" alt="Arroz de Marisco">
+    <h3>Arroz de Marisco</h3>
+    <div class="price" data-preco="25780">25.780,00 KZ</div>
+    <button onclick="adicionarItem('c014','Arroz de Marisco',25780,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/arroz-congriel.jpg" alt="Arroz Congriel">
+    <h3>Arroz Congriel</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('c015','Arroz Congriel',22890,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+  <div class="product" data-categoria="carnes">
+    <img src="imagens/risoto-gambas.jpg" alt="Risoto de Gambas">
+    <h3>Risoto de Gambas</h3>
+    <div class="price" data-preco="19890">19.890,00 KZ</div>
+    <button onclick="adicionarItem('c016','Risoto de Gambas',19890,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
+
+  <!-- Massas Diversas -->
+  
+  <div class="product" data-categoria="massas">
+    <img src="imagens/massada-peixe.jpg" alt="Massada de Peixe">
+    <h3>Massada de Peixe</h3>
+    <div class="price" data-preco="13890">13.890,00 KZ</div>
+    <button onclick="adicionarItem('ma001','Massada de Peixe',13890,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="massas">
+    <img src="imagens/massa-com-todos.jpg" alt="Massa com Todos">
+    <h3>Massa com Todos</h3>
+    <div class="price" data-preco="13890">13.890,00 KZ</div>
+    <button onclick="adicionarItem('ma002','Massa com Todos',13890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="massas">
+    <img src="imagens/massa-gep.jpg" alt="Massa à GEP">
+    <h3>Massa à GEP</h3>
+    <div class="price" data-preco="14890">14.890,00 KZ</div>
+    <button onclick="adicionarItem('ma003','Massa à GEP',14890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="massas">
+    <img src="imagens/yakisoba.jpg" alt="Yakisoba">
+    <h3>Yakisoba</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('ma004','Yakisoba',16890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="massas">
+    <img src="imagens/risoto-gambas.jpg" alt="Risoto de Gambas">
+    <h3>Risoto de Gambas</h3>
+    <div class="price" data-preco="19670">19.670,00 KZ</div>
+    <button onclick="adicionarItem('ma005','Risoto de Gambas',19670,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+<!-- Bebidas -->
+
+  <div class="product" data-categoria="bebidas">
+    <img src="imagens/agua.jpg" alt="Água">
+    <h3>Água</h3>
+    <div class="price" data-preco="980">980,00 KZ</div>
+    <button onclick="adicionarItem('b001','Água',980,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="bebidas">
+    <img src="imagens/agua-gas.jpg" alt="Água com Gás">
+    <h3>Água com Gás</h3>
+    <div class="price" data-preco="1890">1.890,00 KZ</div>
+    <button onclick="adicionarItem('b002','Água com Gás',1890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="bebidas">
+    <img src="imagens/agua-grande.jpg" alt="Água Grande">
+    <h3>Água Grande</h3>
+    <div class="price" data-preco="1890">1.890,00 KZ</div>
+    <button onclick="adicionarItem('b003','Água Grande',1890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <!-- Cervejas Diversas -->
+  
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/fino-normal.jpg" alt="Fino Normal">
+    <h3>Fino Normal</h3>
+    <div class="price" data-preco="1490">1.490,00 KZ</div>
+    <button onclick="adicionarItem('cv001','Fino Normal',1490,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/lambreta.jpg" alt="Lambreta">
+    <h3>Lambreta</h3>
+    <div class="price" data-preco="980">980,00 KZ</div>
+    <button onclick="adicionarItem('cv002','Lambreta',980,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/lambreta-tango.jpg" alt="Lambreta Tango">
+    <h3>Lambreta Tango</h3>
+    <div class="price" data-preco="1200">1.200,00 KZ</div>
+    <button onclick="adicionarItem('cv003','Lambreta Tango',1200,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/canecao.jpg" alt="Canecão">
+    <h3>Canecão</h3>
+    <div class="price" data-preco="3290">3.290,00 KZ</div>
+    <button onclick="adicionarItem('cv004','Canecão',3290,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/fino-taca.jpg" alt="Fino na Taça">
+    <h3>Fino na Taça</h3>
+    <div class="price" data-preco="1890">1.890,00 KZ</div>
+    <button onclick="adicionarItem('cv005','Fino na Taça',1890,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/fino-tango.jpg" alt="Fino Tango">
+    <h3>Fino Tango</h3>
+    <div class="price" data-preco="1890">1.890,00 KZ</div>
+    <button onclick="adicionarItem('cv006','Fino Tango',1890,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/cuca.jpg" alt="Cuca">
+    <h3>Cuca</h3>
+    <div class="price" data-preco="1490">1.490,00 KZ</div>
+    <button onclick="adicionarItem('cv007','Cuca',1490,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/doppel.jpg" alt="Doppel">
+    <h3>Doppel</h3>
+    <div class="price" data-preco="1490">1.490,00 KZ</div>
+    <button onclick="adicionarItem('cv008','Doppel',1490,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/eka.jpg" alt="Eka">
+    <h3>Eka</h3>
+    <div class="price" data-preco="1490">1.490,00 KZ</div>
+    <button onclick="adicionarItem('cv009','Eka',1490,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/corona.jpg" alt="Corona">
+    <h3>Corona</h3>
+    <div class="price" data-preco="3210">3.210,00 KZ</div>
+    <button onclick="adicionarItem('cv010','Corona',3210,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/booster.jpg" alt="Booster">
+    <h3>Booster</h3>
+    <div class="price" data-preco="1605">1.605,00 KZ</div>
+    <button onclick="adicionarItem('cv011','Booster',1605,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/nocal.jpg" alt="Nocal">
+    <h3>Nocal</h3>
+    <div class="price" data-preco="1490">1.490,00 KZ</div>
+    <button onclick="adicionarItem('cv012','Nocal',1490,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/torres-fino.jpg" alt="Torres de Fino">
+    <h3>Torres de Fino</h3>
+    <div class="price" data-preco="26890">26.890,00 KZ</div>
+    <button onclick="adicionarItem('cv013','Torres de Fino',26890,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/panache.jpg" alt="Panache">
+    <h3>Panache</h3>
+    <div class="price" data-preco="1890">1.890,00 KZ</div>
+    <button onclick="adicionarItem('cv014','Panache',1890,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/savana.jpg" alt="Savana">
+    <h3>Savana</h3>
+    <div class="price" data-preco="3210">3.210,00 KZ</div>
+    <button onclick="adicionarItem('cv015','Savana',3210,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+  <div class="product" data-categoria="cervejas">
+    <img src="imagens/sminorff.jpg" alt="Sminorff">
+    <h3>Sminorff</h3>
+    <div class="price" data-preco="2570">2.570,00 KZ</div>
+    <button onclick="adicionarItem('cv016','Sminorff',2570,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
+
+  <!-- Cocktails -->
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/caipblack.jpg" alt="Caipblack">
+    <h3>Caipblack</h3>
+    <div class="price" data-preco="6548">6.548,00 KZ</div>
+    <button onclick="adicionarItem('co001','Caipblack',6548,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/cuba-libre.jpg" alt="Cuba-Libre">
+    <h3>Cuba-Libre</h3>
+    <div class="price" data-preco="5890">5.890,00 KZ</div>
+    <button onclick="adicionarItem('co002','Cuba-Libre',5890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/daiquiri.jpg" alt="Daiquiri">
+    <h3>Daiquiri</h3>
+    <div class="price" data-preco="6570">6.570,00 KZ</div>
+    <button onclick="adicionarItem('co003','Daiquiri',6570,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/especial-gep.jpg" alt="Especial GEP">
+    <h3>Especial GEP</h3>
+    <div class="price" data-preco="6399">6.399,00 KZ</div>
+    <button onclick="adicionarItem('co004','Especial GEP',6399,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/caipirinha.jpg" alt="Caipirinha">
+    <h3>Caipirinha</h3>
+    <div class="price" data-preco="4815">4.815,00 KZ</div>
+    <button onclick="adicionarItem('co005','Caipirinha',4815,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/caipirinha-frutos-vermelhos.jpg" alt="Caipirinha Frutos Vermelhos">
+    <h3>Caipirinha Frutos Vermelhos</h3>
+    <div class="price" data-preco="6548">6.548,00 KZ</div>
+    <button onclick="adicionarItem('co006','Caipirinha Frutos Vermelhos',6548,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/caipirosca.jpg" alt="Caipirosca">
+    <h3>Caipirosca</h3>
+    <div class="price" data-preco="4173">4.173,00 KZ</div>
+    <button onclick="adicionarItem('co007','Caipirosca',4173,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/cinderela.jpg" alt="Cinderela">
+    <h3>Cinderela</h3>
+    <div class="price" data-preco="6399">6.399,00 KZ</div>
+    <button onclick="adicionarItem('co008','Cinderela',6399,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/granizado-frutos-vermelhos.jpg" alt="Granizado de Frutos Vermelhos">
+    <h3>Granizado de Frutos Vermelhos</h3>
+    <div class="price" data-preco="7980">7.980,00 KZ</div>
+    <button onclick="adicionarItem('co009','Granizado de Frutos Vermelhos',7980,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/granizado-maracuja.jpg" alt="Granizado de Maracujá">
+    <h3>Granizado de Maracujá</h3>
+    <div class="price" data-preco="6980">6.980,00 KZ</div>
+    <button onclick="adicionarItem('co010','Granizado de Maracujá',6980,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/hunters-especial.jpg" alt="Hunters Especial">
+    <h3>Hunters Especial</h3>
+    <div class="price" data-preco="8378">8.378,00 KZ</div>
+    <button onclick="adicionarItem('co011','Hunters Especial',8378,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/lago-azul.jpg" alt="Lago Azul">
+    <h3>Lago Azul</h3>
+    <div class="price" data-preco="6789">6.789,00 KZ</div>
+    <button onclick="adicionarItem('co012','Lago Azul',6789,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/long-island.jpg" alt="Long Island Ice Tea">
+    <h3>Long Island Ice Tea</h3>
+    <div class="price" data-preco="6313">6.313,00 KZ</div>
+    <button onclick="adicionarItem('co013','Long Island Ice Tea',6313,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/malibu.jpg" alt="Malibu">
+    <h3>Malibu</h3>
+    <div class="price" data-preco="4269">4.269,00 KZ</div>
+    <button onclick="adicionarItem('co014','Malibu',4269,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/margarita.jpg" alt="Margarita">
+    <h3>Margarita</h3>
+    <div class="price" data-preco="4280">4.280,00 KZ</div>
+    <button onclick="adicionarItem('co015','Margarita',4280,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/mojito.jpg" alt="Mojito">
+    <h3>Mojito</h3>
+    <div class="price" data-preco="6789">6.789,00 KZ</div>
+    <button onclick="adicionarItem('co016','Mojito',6789,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
+
+    <div class="product" data-categoria="cocktails">
+    <img src="imagens/pina-colada.jpg" alt="Piña-Colada">
+    <h3>Piña-Colada</h3>
+    <div class="price" data-preco="5297">5.297,00 KZ</div>
+    <button onclick="adicionarItem('co017','Piña-Colada',5297,'sug017')">Adicionar</button>
+    <div class="sugestao" id="sug017"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/rock-n-roll.jpg" alt="Rock n' Roll">
+    <h3>Rock n' Roll</h3>
+    <div class="price" data-preco="8132">8.132,00 KZ</div>
+    <button onclick="adicionarItem('co018','Rock n Roll',8132,'sug018')">Adicionar</button>
+    <div class="sugestao" id="sug018"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/sex-on-the-beach.jpg" alt="Sex on the Beach">
+    <h3>Sex on the Beach</h3>
+    <div class="price" data-preco="5799">5.799,00 KZ</div>
+    <button onclick="adicionarItem('co019','Sex on the Beach',5799,'sug019')">Adicionar</button>
+    <div class="sugestao" id="sug019"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/tropical-mix-sem-alcool.jpg" alt="Tropical Mix sem Álcool">
+    <h3>Tropical Mix sem Álcool</h3>
+    <div class="price" data-preco="6548">6.548,00 KZ</div>
+    <button onclick="adicionarItem('co020','Tropical Mix sem Álcool',6548,'sug020')">Adicionar</button>
+    <div class="sugestao" id="sug020"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/tropical-mix-com-alcool.jpg" alt="Tropical Mix com Álcool">
+    <h3>Tropical Mix com Álcool</h3>
+    <div class="price" data-preco="7548">7.548,00 KZ</div>
+    <button onclick="adicionarItem('co021','Tropical Mix com Álcool',7548,'sug021')">Adicionar</button>
+    <div class="sugestao" id="sug021"></div>
+  </div>
+
+  <div class="product" data-categoria="cocktails">
+    <img src="imagens/vodka-laranja.jpg" alt="Vodka com Laranja">
+    <h3>Vodka com Laranja</h3>
+    <div class="price" data-preco="6302">6.302,00 KZ</div>
+    <button onclick="adicionarItem('co022','Vodka com Laranja',6302,'sug022')">Adicionar</button>
+    <div class="sugestao" id="sug022"></div>
+  </div>
+
+<main class="conteudo-principal">
+
+  <!-- Café -->
+  
+  <div class="product" data-categoria="bebidas-quentes">
+    <img src="imagens/cafe.jpg" alt="Café">
+    <h3>Café</h3>
+    <div class="price" data-preco="1175">1.175,00 KZ</div>
+    <button onclick="adicionarItem('cf001','Café',1175,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="bebidas-quentes">
+    <img src="imagens/galao.jpg" alt="Galão">
+    <h3>Galão</h3>
+    <div class="price" data-preco="1500">1.500,00 KZ</div>
+    <button onclick="adicionarItem('cf003','Galão',1500,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="bebidas-quentes">
+    <img src="imagens/cha.jpg" alt="Chá">
+    <h3>Chá</h3>
+    <div class="price" data-preco="7890">7.890,00 KZ</div>
+    <button onclick="adicionarItem('cf004','Chá',7890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="bebidas-quentes">
+    <img src="imagens/cafe-cheirinho.jpg" alt="Café com Cheirinho">
+    <h3>Café com Cheirinho</h3>
+    <div class="price" data-preco="2980">2.980,00 KZ</div>
+    <button onclick="adicionarItem('cf005','Café com Cheirinho',2980,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <!-- Champanhe -->
+  
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/cristal-luis-roederer.jpg" alt="Cristal Luís Roederer">
+    <h3>Cristal Luís Roederer</h3>
+    <div class="price" data-preco="980000">980.000,00 KZ</div>
+    <button onclick="adicionarItem('ch001','Cristal Luís Roederer',980000,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/moet-ice.jpg" alt="Moet Ice">
+    <h3>Moet Ice</h3>
+    <div class="price" data-preco="190000">190.000,00 KZ</div>
+    <button onclick="adicionarItem('ch002','Moet Ice',190000,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/moet-nector.jpg" alt="Moet Nector">
+    <h3>Moet Nector</h3>
+    <div class="price" data-preco="180000">180.000,00 KZ</div>
+    <button onclick="adicionarItem('ch003','Moet Nector',180000,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/oro-oro.jpg" alt="Oro-Oro">
+    <h3>Oro-Oro</h3>
+    <div class="price" data-preco="150000">150.000,00 KZ</div>
+    <button onclick="adicionarItem('ch004','Oro-Oro',150000,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/collection.jpg" alt="Collection">
+    <h3>Collection</h3>
+    <div class="price" data-preco="160000">160.000,00 KZ</div>
+    <button onclick="adicionarItem('ch005','Collection',160000,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/mumm.jpg" alt="Mumm">
+    <h3>Mumm</h3>
+    <div class="price" data-preco="120000">120.000,00 KZ</div>
+    <button onclick="adicionarItem('ch006','Mumm',120000,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/moscato.jpg" alt="Moscato">
+    <h3>Moscato</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('ch007','Moscato',35000,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="champanhe">
+    <img src="imagens/laco-vermelho.jpg" alt="Laço Vermelho">
+    <h3>Laço Vermelho</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('ch008','Laço Vermelho',22890,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <!-- Whiskey Velho Dose -->
+  
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/blue-label.jpg" alt="Blue Label">
+    <h3>Blue Label</h3>
+    <div class="price" data-preco="18890">18.890,00 KZ</div>
+    <button onclick="adicionarItem('w001','Blue Label',18890,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/green-label.jpg" alt="Green Label">
+    <h3>Green Label</h3>
+    <div class="price" data-preco="18890">18.890,00 KZ</div>
+    <button onclick="adicionarItem('w002','Green Label',18890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/gold-label.jpg" alt="Gold Label">
+    <h3>Gold Label</h3>
+    <div class="price" data-preco="17890">17.890,00 KZ</div>
+    <button onclick="adicionarItem('w003','Gold Label',17890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/platino-label.jpg" alt="Platino Label">
+    <h3>Platino Label</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('w004','Platino Label',16890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/double-black.jpg" alt="Double Black">
+    <h3>Double Black</h3>
+    <div class="price" data-preco="11890">11.890,00 KZ</div>
+    <button onclick="adicionarItem('w005','Double Black',11890,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/jameson-black.jpg" alt="Jameson Black">
+    <h3>Jameson Black</h3>
+    <div class="price" data-preco="6999">6.999,00 KZ</div>
+    <button onclick="adicionarItem('w006','Jameson Black',6999,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/chivas.jpg" alt="Chivas">
+    <h3>Chivas</h3>
+    <div class="price" data-preco="7129">7.129,00 KZ</div>
+    <button onclick="adicionarItem('w007','Chivas',7129,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/ballantines.jpg" alt="Ballantines">
+    <h3>Ballantines</h3>
+    <div class="price" data-preco="8920">8.920,00 KZ</div>
+    <button onclick="adicionarItem('w008','Ballantines',8920,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+  
+    <!-- Whiskey Novo -->
+	
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/jameson.jpg" alt="Jameson">
+    <h3>Jameson</h3>
+    <div class="price" data-preco="5478">5.478,00 KZ</div>
+    <button onclick="adicionarItem('w009','Jameson',5478,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/red-label.jpg" alt="Red Label">
+    <h3>Red Label</h3>
+    <div class="price" data-preco="5230">5.230,00 KZ</div>
+    <button onclick="adicionarItem('w010','Red Label',5230,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/whiskey-cola.jpg" alt="Whiskey-Cola">
+    <h3>Whiskey-Cola</h3>
+    <div class="price" data-preco="6270">6.270,00 KZ</div>
+    <button onclick="adicionarItem('w011','Whiskey-Cola',6270,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="whiskey">
+    <img src="imagens/blonde.jpg" alt="Blonde">
+    <h3>Blonde</h3>
+    <div class="price" data-preco="5200">5.200,00 KZ</div>
+    <button onclick="adicionarItem('w012','Blonde',5200,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <!-- Vinhos Tinto -->
+  
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/cartuxa.jpg" alt="Cartuxa">
+    <h3>Cartuxa</h3>
+    <div class="price" data-preco="53382">53.382,00 KZ</div>
+    <button onclick="adicionarItem('v001','Cartuxa',53382,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/monte-velho.jpg" alt="Monte Velho">
+    <h3>Monte Velho</h3>
+    <div class="price" data-preco="16890">16.890,00 KZ</div>
+    <button onclick="adicionarItem('v002','Monte Velho',16890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/palmela.jpg" alt="Palmela">
+    <h3>Palmela</h3>
+    <div class="price" data-preco="29949">29.949,00 KZ</div>
+    <button onclick="adicionarItem('v003','Palmela',29949,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/silk-spice.jpg" alt="Silk-Spice">
+    <h3>Silk-Spice</h3>
+    <div class="price" data-preco="35990">35.990,00 KZ</div>
+    <button onclick="adicionarItem('v004','Silk-Spice',35990,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/vinho-casinha.jpg" alt="Vinho da Casinha">
+    <h3>Vinho da Casinha</h3>
+    <div class="price" data-preco="22000">22.000,00 KZ</div>
+    <button onclick="adicionarItem('v005','Vinho da Casinha',22000,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/amicone.jpg" alt="Amicone">
+    <h3>Amicone</h3>
+    <div class="price" data-preco="62500">62.500,00 KZ</div>
+    <button onclick="adicionarItem('v006','Amicone',62500,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/arcos-marques.jpg" alt="Arcos do Marquês">
+    <h3>Arcos do Marquês</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('v007','Arcos do Marquês',35000,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/duas-quintas.jpg" alt="Duas Quintas">
+    <h3>Duas Quintas</h3>
+    <div class="price" data-preco="45980">45.980,00 KZ</div>
+    <button onclick="adicionarItem('v008','Duas Quintas',45980,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/esteva.jpg" alt="Esteva">
+    <h3>Esteva</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('v009','Esteva',22890,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/ferreira.jpg" alt="Ferreira">
+    <h3>Ferreira</h3>
+    <div class="price" data-preco="39980">39.980,00 KZ</div>
+    <button onclick="adicionarItem('v010','Ferreira',39980,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/mariana-tinto.jpg" alt="Mariana Tinto">
+    <h3>Mariana Tinto</h3>
+    <div class="price" data-preco="26890">26.890,00 KZ</div>
+    <button onclick="adicionarItem('v011','Mariana Tinto',26890,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/marques-borba.jpg" alt="Marquês de Borba">
+    <h3>Marquês de Borba</h3>
+    <div class="price" data-preco="32890">32.890,00 KZ</div>
+    <button onclick="adicionarItem('v012','Marquês de Borba',32890,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/nederburg.jpg" alt="Nederburg">
+    <h3>Nederburg</h3>
+    <div class="price" data-preco="25790">25.790,00 KZ</div>
+    <button onclick="adicionarItem('v013','Nederburg',25790,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/papa-figo.jpg" alt="Papa Figo">
+    <h3>Papa Figo</h3>
+    <div class="price" data-preco="35890">35.890,00 KZ</div>
+    <button onclick="adicionarItem('v014','Papa Figo',35890,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/paulo-louriano.jpg" alt="Paulo Louriano">
+    <h3>Paulo Louriano</h3>
+    <div class="price" data-preco="21890">21.890,00 KZ</div>
+    <button onclick="adicionarItem('v015','Paulo Louriano',21890,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+  <!-- Vinhos Branco | Verde -->
+  
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/mariana-branco.jpg" alt="Mariana Branco">
+    <h3>Mariana Branco</h3>
+    <div class="price" data-preco="26789">26.789,00 KZ</div>
+    <button onclick="adicionarItem('v016','Mariana Branco',26789,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
+
+   <div class="product" data-categoria="vinhos">
+    <img src="imagens/casal-garcia.jpg" alt="Casal Garcia">
+    <h3>Casal Garcia</h3>
+    <div class="price" data-preco="25700">25.700,00 KZ</div>
+    <button onclick="adicionarItem('v017','Casal Garcia',25700,'sug017')">Adicionar</button>
+    <div class="sugestao" id="sug017"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/gazela.jpg" alt="Gazela">
+    <h3>Gazela</h3>
+    <div class="price" data-preco="22730">22.730,00 KZ</div>
+    <button onclick="adicionarItem('v018','Gazela',22730,'sug018')">Adicionar</button>
+    <div class="sugestao" id="sug018"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/planalto.jpg" alt="Planalto">
+    <h3>Planalto</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('v019','Planalto',22890,'sug019')">Adicionar</button>
+    <div class="sugestao" id="sug019"></div>
+  </div>
+  
+    <div class="product" data-categoria="vinhos">
+    <img src="imagens/mateus-rose.jpg" alt="Mateus Rosé">
+    <h3>Mateus Rosé</h3>
+    <div class="price" data-preco="18920">18.920,00 KZ</div>
+    <button onclick="adicionarItem('v020','Mateus Rosé',18920,'sug020')">Adicionar</button>
+    <div class="sugestao" id="sug020"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/quinta-ferreira.jpg" alt="Quinta da Ferreira">
+    <h3>Quinta da Ferreira</h3>
+    <div class="price" data-preco="22340">22.340,00 KZ</div>
+    <button onclick="adicionarItem('v021','Quinta da Ferreira',22340,'sug021')">Adicionar</button>
+    <div class="sugestao" id="sug021"></div>
+  </div>
+
+  <div class="product" data-categoria="vinhos">
+    <img src="imagens/terra-demo.jpg" alt="Terra do Demo">
+    <h3>Terra do Demo</h3>
+    <div class="price" data-preco="55000">55.000,00 KZ</div>
+    <button onclick="adicionarItem('v022','Terra do Demo',55000,'sug022')">Adicionar</button>
+    <div class="sugestao" id="sug022"></div>
+  </div>
+
+  <!-- Licores -->
+  
+  <div class="product" data-categoria="licores">
+    <img src="imagens/amarula.jpg" alt="Amarula">
+    <h3>Amarula</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('l001','Amarula',35000,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="licores">
+    <img src="imagens/martine-rossoine-rosso.jpg" alt="Martine Rosso">
+    <h3>Marine Rosso</h3>
+    <div class="price" data-preco="45000">45.000,00 KZ</div>
+    <button onclick="adicionarItem('l002','Martine Rosso',45000,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="licores">
+    <img src="imagens/licor-beirao.jpg" alt="Licor Beirão">
+    <h3>Licor Beirão</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('l003','Licor Beirão',35000,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="licores">
+    <img src="imagens/kira-amarula.jpg" alt="Kira Amarula">
+    <h3>Kira Amarula</h3>
+    <div class="price" data-preco="30000">30.000,00 KZ</div>
+    <button onclick="adicionarItem('l004','Kira Amarula',30000,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="licores">
+    <img src="imagens/beevock.jpg" alt="Beevock">
+    <h3>Beevock</h3>
+    <div class="price" data-preco="30000">30.000,00 KZ</div>
+    <button onclick="adicionarItem('l005','Beevock',30000,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <!-- Cognacs -->
+  
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/1920.jpg" alt="1920">
+    <h3>1920</h3>
+    <div class="price" data-preco="4911">4.911,00 KZ</div>
+    <button onclick="adicionarItem('cg001','1920',4911,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/antiqua.jpg" alt="Antiqua">
+    <h3>Antiqua</h3>
+    <div class="price" data-preco="8442">8.442,00 KZ</div>
+    <button onclick="adicionarItem('cg002','Antiqua',8442,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/courvoisier-vs.jpg" alt="Courvoisier V.S">
+    <h3>Courvoisier V.S</h3>
+    <div class="price" data-preco="12722">12.722,00 KZ</div>
+    <button onclick="adicionarItem('cg003','Courvoisier V.S',12722,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/hennesey.jpg" alt="Hennesey">
+    <h3>Hennesey</h3>
+    <div class="price" data-preco="13792">13.792,00 KZ</div>
+    <button onclick="adicionarItem('cg004','Hennesey',13792,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/martell.jpg" alt="Martell">
+    <h3>Martell</h3>
+    <div class="price" data-preco="12722">12.722,00 KZ</div>
+    <button onclick="adicionarItem('cg005','Martell',12722,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <div class="product" data-categoria="cognacs">
+    <img src="imagens/remy-martiny.jpg" alt="Remy Martiny">
+    <h3>Remy Martiny</h3>
+    <div class="price" data-preco="14230">14.230,00 KZ</div>
+    <button onclick="adicionarItem('cg006','Remy Martiny',14230,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <!-- Shots -->
+  
+  <div class="product" data-categoria="shots">
+    <img src="imagens/shots-especial.jpg" alt="Shots Especial">
+    <h3>Shots Especial</h3>
+    <div class="price" data-preco="2022">2.022,00 KZ</div>
+    <button onclick="adicionarItem('sh001','Shots Especial',2022,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <div class="product" data-categoria="shots">
+    <img src="imagens/tequila.jpg" alt="Tequila">
+    <h3>Tequila</h3>
+    <div class="price" data-preco="1584">1.584,00 KZ</div>
+    <button onclick="adicionarItem('sh002','Tequila',1584,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <div class="product" data-categoria="shots">
+    <img src="imagens/shots-gep-fogo.jpg" alt="Shots GEP Fogo">
+    <h3>Shots GEP Fogo</h3>
+    <div class="price" data-preco="0">--</div>
+    <button onclick="adicionarItem('sh003','Shots GEP Fogo',0,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <!-- Sangria Tinto -->
+  
+  <div class="product" data-categoria="sangrias">
+    <img src="imagens/sangria-tinto.jpg" alt="Sangria Tinto">
+    <h3>Sangria Tinto</h3>
+    <div class="price" data-preco="17890">17.890,00 KZ</div>
+    <button onclick="adicionarItem('sg001','Sangria Tinto',17890,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <!-- Sangria Espumante -->
+  <div class="product" data-categoria="sangrias">
+    <img src="imagens/sangria-espumante.jpg" alt="Sangria Espumante">
+    <h3>Sangria Espumante</h3>
+    <div class="price" data-preco="26890">26.890,00 KZ</div>
+    <button onclick="adicionarItem('sg002','Sangria Espumante',26890,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <!-- Sagrinha de Frutos Vermelhos -->
+  <div class="product" data-categoria="sangrias">
+    <img src="imagens/sagrinha-frutos-vermelhos.jpg" alt="Sagrinha de Frutos Vermelhos">
+    <h3>Sagrinha de Frutos Vermelhos</h3>
+    <div class="price" data-preco="27890">27.890,00 KZ</div>
+    <button onclick="adicionarItem('sg003','Sagrinha de Frutos Vermelhos',27890,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <!-- Sagrinha Azul -->
+  <div class="product" data-categoria="sangrias">
+    <img src="imagens/sagrinha-azul.jpg" alt="Sagrinha Azul">
+    <h3>Sagrinha Azul</h3>
+    <div class="price" data-preco="22890">22.890,00 KZ</div>
+    <button onclick="adicionarItem('sg004','Sagrinha Azul',22890,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <!-- Gin Gordons -->
+  
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-gordons.jpg" alt="Gin Gordons">
+    <h3>Gin Gordons</h3>
+    <div class="price" data-preco="3930">3.930,00 KZ</div>
+    <button onclick="adicionarItem('gn001','Gin Gordons',3930,'sug001')">Adicionar</button>
+    <div class="sugestao" id="sug001"></div>
+  </div>
+
+  <!-- Gin Hevelock -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-hevelock.jpg" alt="Gin Hevelock">
+    <h3>Gin Hevelock</h3>
+    <div class="price" data-preco="3930">3.930,00 KZ</div>
+    <button onclick="adicionarItem('gn002','Gin Hevelock',3930,'sug002')">Adicionar</button>
+    <div class="sugestao" id="sug002"></div>
+  </div>
+
+  <!-- Gin Bombay -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-bombay.jpg" alt="Gin Bombay">
+    <h3>Gin Bombay</h3>
+    <div class="price" data-preco="5430">5.430,00 KZ</div>
+    <button onclick="adicionarItem('gn003','Gin Bombay',5430,'sug003')">Adicionar</button>
+    <div class="sugestao" id="sug003"></div>
+  </div>
+
+  <!-- Gin Beefeater -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-beefeater.jpg" alt="Gin Beefeater">
+    <h3>Gin Beefeater</h3>
+    <div class="price" data-preco="4590">4.590,00 KZ</div>
+    <button onclick="adicionarItem('gn004','Gin Beefeater',4590,'sug004')">Adicionar</button>
+    <div class="sugestao" id="sug004"></div>
+  </div>
+
+  <!-- Gin Bolldog -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-bolldog.jpg" alt="Gin Bolldog">
+    <h3>Gin Bolldog</h3>
+    <div class="price" data-preco="8970">8.970,00 KZ</div>
+    <button onclick="adicionarItem('gn005','Gin Bolldog',8970,'sug005')">Adicionar</button>
+    <div class="sugestao" id="sug005"></div>
+  </div>
+
+  <!-- Gin Hedrick -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-hedrick.jpg" alt="Gin Hedrick">
+    <h3>Gin Hedrick</h3>
+    <div class="price" data-preco="9890">9.890,00 KZ</div>
+    <button onclick="adicionarItem('gn006','Gin Hedrick',9890,'sug006')">Adicionar</button>
+    <div class="sugestao" id="sug006"></div>
+  </div>
+
+  <!-- Gin Kianda -->
+  <div class="product" data-categoria="gin">
+    <img src="imagens/gin-kianda.jpg" alt="Gin Kianda">
+    <h3>Gin Kianda</h3>
+    <div class="price" data-preco="6890">6.890,00 KZ</div>
+    <button onclick="adicionarItem('gn007','Gin Kianda',6890,'sug007')">Adicionar</button>
+    <div class="sugestao" id="sug007"></div>
+  </div>
+  
+    <!-- São Domingos -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/sao-domingos.jpg" alt="São Domingos">
+    <h3>São Domingos</h3>
+    <div class="price" data-preco="27890">27.890,00 KZ</div>
+    <button onclick="adicionarItem('ag001','São Domingos',27890,'sug008')">Adicionar</button>
+    <div class="sugestao" id="sug008"></div>
+  </div>
+
+  <!-- Tequila -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/tequila.jpg" alt="Tequila">
+    <h3>Tequila</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('ag002','Tequila',35000,'sug009')">Adicionar</button>
+    <div class="sugestao" id="sug009"></div>
+  </div>
+
+  <!-- Bombay -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/bombay.jpg" alt="Bombay">
+    <h3>Bombay</h3>
+    <div class="price" data-preco="45000">45.000,00 KZ</div>
+    <button onclick="adicionarItem('ag003','Bombay',45000,'sug010')">Adicionar</button>
+    <div class="sugestao" id="sug010"></div>
+  </div>
+
+  <!-- Gordons -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/gordons.jpg" alt="Gordons">
+    <h3>Gordons</h3>
+    <div class="price" data-preco="30000">30.000,00 KZ</div>
+    <button onclick="adicionarItem('ag004','Gordons',30000,'sug011')">Adicionar</button>
+    <div class="sugestao" id="sug011"></div>
+  </div>
+
+  <!-- Kianda -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/kianda.jpg" alt="Kianda">
+    <h3>Kianda</h3>
+    <div class="price" data-preco="35000">35.000,00 KZ</div>
+    <button onclick="adicionarItem('ag005','Kianda',35000,'sug012')">Adicionar</button>
+    <div class="sugestao" id="sug012"></div>
+  </div>
+
+  <!-- Vodka -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/vodka.jpg" alt="Vodka">
+    <h3>Vodka</h3>
+    <div class="price" data-preco="27000">27.000,00 KZ</div>
+    <button onclick="adicionarItem('ag006','Vodka',27000,'sug013')">Adicionar</button>
+    <div class="sugestao" id="sug013"></div>
+  </div>
+
+  <!-- Hevelock -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/hevelock.jpg" alt="Hevelock">
+    <h3>Hevelock</h3>
+    <div class="price" data-preco="25000">25.000,00 KZ</div>
+    <button onclick="adicionarItem('ag007','Hevelock',25000,'sug014')">Adicionar</button>
+    <div class="sugestao" id="sug014"></div>
+  </div>
+
+  <!-- Havana Club -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/havana-club.jpg" alt="Havana Club">
+    <h3>Havana Club</h3>
+    <div class="price" data-preco="30000">30.000,00 KZ</div>
+    <button onclick="adicionarItem('ag008','Havana Club',30000,'sug015')">Adicionar</button>
+    <div class="sugestao" id="sug015"></div>
+  </div>
+
+    <!-- Beefeater -->
+  <div class="product" data-categoria="aguardente">
+    <img src="imagens/beefeater.jpg" alt="Beefeater">
+    <h3>Beefeater</h3>
+    <div class="price" data-preco="45000">45.000,00 KZ</div>
+    <button onclick="adicionarItem('ag009','Beefeater',45000,'sug016')">Adicionar</button>
+    <div class="sugestao" id="sug016"></div>
+  </div>
   </main>
 
   <script>
@@ -305,4 +1656,5 @@
 </body>
 
 </html>
+
 
