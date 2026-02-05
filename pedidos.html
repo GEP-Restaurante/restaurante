@@ -40,8 +40,35 @@
       font-weight: bold;
     }
 
+    /* Botão Opções */
+    .menu-toggle {
+      display: none; /* escondido no desktop */
+      background: linear-gradient(135deg, #FFD700, #FF4C4C);
+      color: #111;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+    .menu-toggle:hover {
+      background: linear-gradient(135deg, #FF4C4C, #007BFF);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
     @media(max-width:768px){
       .nav-links{display:none;}
+      .menu-toggle {
+        display:block;
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        z-index:1100;
+        border-radius:50px;
+      }
     }
 
     .mobile-menu {
@@ -124,6 +151,10 @@
         <img src="imagens/gep.logo.jpg" alt="Logo GEP Restaurante">
       </a>
     </div>
+
+    <!-- Botão Opções -->
+    <button class="menu-toggle">Opções ☰</button>
+
     <ul class="nav-links">
       <li><a href="cardápio.html">Cardápio</a></li>
       <li><a href="pedidos.html" class="active">Pedidos</a></li>
