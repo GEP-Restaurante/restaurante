@@ -1579,28 +1579,29 @@
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  // Fecha menu ao clicar em link ou fora
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.style.display = 'none';
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
     });
-  });
 
-  document.addEventListener('click', (e) => {
-    if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
-      mobileMenu.style.display = 'none';
-    }
-  });
+    // Fecha menu ao clicar em link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+      });
+    });
 
-  // ===== Filtro de categorias =====
-  const filtroDesktop = document.getElementById('categoria');
-  const filtroMobile = document.getElementById('categoria-mobile');
-  const limparBtnDesktop = document.getElementById('limpar-filtro');
-  const limparBtnMobile = document.getElementById('limpar-filtro-mobile');
+    // Fecha menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.style.display === 'flex' && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+        mobileMenu.style.display = 'none';
+      }
+    });
+  }
+
+  // ===== Filtro de categorias (apenas no menu.html) =====
+  const filtro = document.getElementById('categoria');
+  const limparBtn = document.getElementById('limpar-filtro');
   const produtos = document.querySelectorAll('.product');
 
   function aplicarFiltro(categoria) {
@@ -1613,23 +1614,16 @@
     });
   }
 
-  if (filtroDesktop) filtroDesktop.addEventListener('change', () => aplicarFiltro(filtroDesktop.value));
-  if (filtroMobile) filtroMobile.addEventListener('change', () => aplicarFiltro(filtroMobile.value));
-
-  if (limparBtnDesktop) limparBtnDesktop.addEventListener('click', () => {
-    filtroDesktop.value = 'todos';
-    aplicarFiltro('todos');
-  });
-
-  if (limparBtnMobile) limparBtnMobile.addEventListener('click', () => {
-    filtroMobile.value = 'todos';
+  if (filtro) filtro.addEventListener('change', () => aplicarFiltro(filtro.value));
+  if (limparBtn) limparBtn.addEventListener('click', () => {
+    filtro.value = 'todos';
     aplicarFiltro('todos');
   });
 
   // ===== Carrinho sincronizado com localStorage =====
   let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-  function adicionarItem(id, nome, preco, sugestaoId) {
+  function adicionarItem(id, nome, preco) {
     const existente = carrinho.find(item => item.id === id);
     if (existente) {
       existente.qtd += 1;
@@ -1637,10 +1631,7 @@
       carrinho.push({ id, nome, preco, qtd: 1 });
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    if (sugestaoId) {
-      document.getElementById(sugestaoId).innerHTML = nome + " adicionado!";
-    }
-    atualizarCarrinho();
+    alert(nome + " adicionado ao carrinho!");
   }
 
   function atualizarCarrinho() {
@@ -1717,6 +1708,7 @@
 
 </body>
 </html>
+
 
 
 
