@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - GEP Restaurante-</title>
+  <title>Menu - GEP Restaurante</title>
   <style>
     /* ===== CSS exclusivo do menu ===== */
     body {
@@ -56,6 +56,14 @@
       color: #111;
       font-weight: bold;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+    }
+
+    .btn-filtro:hover {
+      background: linear-gradient(135deg, #FF4C4C, #007BFF);
+      color: #fff;
+      transform: scale(1.05);
     }
 
     .menu-toggle {
@@ -67,6 +75,13 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: linear-gradient(135deg, #FF4C4C, #007BFF);
+      color: #fff;
+      transform: scale(1.05);
     }
 
     .nav-links {
@@ -80,15 +95,20 @@
       text-decoration: none;
       color: #111;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #FF4C4C;
     }
 
     /* Mobile */
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .navbar { gap: 8px; }
+      .navbar { gap: 8px; flex-wrap: nowrap; }
       .logo { flex: 0 0 auto; }
       .filtro-nav { flex: 1; min-width: 0; }
-      .menu-toggle { flex: 0 0 auto; }
+      .menu-toggle { flex: 0 0 auto; display: block; }
     }
 
     .mobile-menu {
@@ -111,6 +131,14 @@
       color: #111;
       border-radius: 6px;
       text-align: center;
+      box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu li a:hover {
+      background: linear-gradient(135deg, #FF4C4C, #007BFF);
+      color: #fff;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -173,7 +201,6 @@
       </li>
     </ul>
   </nav>
-
 
   <!-- Menu mobile -->
   <ul class="mobile-menu">
@@ -1701,6 +1728,7 @@
 
 </body>
 </html>
+
 
 
 
