@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - GEP Restaurante</title>
+  <title>Menu - GEP Restaurante-</title>
   <style>
     /* ===== CSS exclusivo do menu ===== */
     body {
@@ -1591,7 +1591,7 @@
     });
   }
 
-  // ===== Filtro de categorias (apenas no menu.html) =====
+  // ===== Filtro de categorias =====
   const filtro = document.getElementById('categoria');
   const limparBtn = document.getElementById('limpar-filtro');
   const produtos = document.querySelectorAll('.product');
@@ -1624,6 +1624,7 @@
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     alert(nome + " adicionado ao carrinho!");
+    atualizarCarrinho();
   }
 
   function atualizarCarrinho() {
@@ -1700,6 +1701,7 @@
 
 </body>
 </html>
+
 
 
 
