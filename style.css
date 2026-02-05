@@ -22,19 +22,20 @@ html, body {
 .navbar {
   background-color: #FFD700; /* dourado institucional */
   display: flex;
-  justify-content: space-between; /* logo à esquerda, filtro e opções à direita */
   align-items: center;
-  padding: 10px 20px; /* altura mais compacta */
+  justify-content: space-between;
+  flex-wrap: wrap; /* permite quebra quando necessário */
+  padding: 10px 15px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  flex-wrap: wrap;
 }
 
+
 .navbar .logo img {
-  height: 45px;
+  height: 40px;
 }
 
 /* Links desktop */
@@ -135,36 +136,94 @@ html, body {
     display: none; /* esconde links desktop */
   }
 
+  /* iPhone 13 Pro (390px) */
+@media (max-width: 420px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-  }
-
-  .filtro-nav {
-    width: 100%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* empilha se não couber */
+    align-items: stretch;
     gap: 8px;
   }
 
-  .filtro-nav select {
-    flex: 1;
+  .logo {
+    align-self: center;
+  }
+ .filtro-nav {
+    width: 100%;
+  }
+ .menu-toggle {
+    align-self: flex-end;
+  }
+}
+
+
+  /* Redmi 15C (720px) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* esconde links desktop */
   }
 
-  .btn-filtro {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .logo {
     flex: 0 0 auto;
   }
 
-  .menu-toggle {
-    display: block;
-    align-self: flex-start;
-    margin-top: 10px;
+  .filtro-nav {
+    flex: 1;
   }
+
+  .menu-toggle {
+    flex: 0 0 auto;
+  }
+}
+
+
+  /* Filtro + limpar */
+.filtro-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1; /* ocupa espaço flexível */
+  min-width: 160px;
+}
+
+.filtro-nav select {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+  .btn-filtro {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+  /* Botão Opções */
+.menu-toggle {
+  flex: 0 0 auto;
+  background: linear-gradient(135deg, #FFD700, #FF4C4C);
+  color: #111;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 }
 
 /* Main mobile first */
@@ -437,3 +496,4 @@ footer a:hover {
   background: #0077cc;
   color: #fff;
 }
+
