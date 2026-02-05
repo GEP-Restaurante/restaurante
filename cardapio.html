@@ -1666,44 +1666,12 @@
         }, 1500);
       }
     }
-	  const categoriaSelect = document.getElementById('categoria');
-    const limparBtn = document.getElementById('limpar-filtro');
-    const main = document.querySelector('main');
-    const produtos = Array.from(document.querySelectorAll('.product'));
-
-    function filtrarProdutos() {
-      const categoria = categoriaSelect.value;
-
-      // limpa o conteúdo do main
-      main.innerHTML = '';
-
-      // filtra os produtos pela categoria
-      const filtrados = produtos.filter(produto =>
-        categoria === 'todos' || produto.dataset.categoria === categoria
-      );
-
-      // adiciona os filtrados na ordem original
-      filtrados.forEach(produto => {
-        main.appendChild(produto);
-      });
-    }
-
-    // evento de mudança no select
-    categoriaSelect.addEventListener('change', filtrarProdutos);
-
-    // botão limpar volta a mostrar todos
-    limparBtn.addEventListener('click', () => {
-      categoriaSelect.value = 'todos';
-      filtrarProdutos();
-    });
-
-    // inicia mostrando todos
-    filtrarProdutos();
-
+	  
   </script>
 </body>
 
 </html>
+
 
 
 
