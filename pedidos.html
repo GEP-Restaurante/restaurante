@@ -1,150 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedidos - GEP Restaurante</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #111;
-      color: #fff;
-      padding-top: 65px;
-    }
-
-    .navbar {
-      background: #FFD700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 15px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .logo img { height: 40px; }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin-left: auto;
-    }
-    .nav-links li a {
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-    }
-
-    /* Botão Opções */
-    .menu-toggle {
-      display: none; /* escondido no desktop */
-      background: linear-gradient(135deg, #FFD700, #FF4C4C);
-      color: #111;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
-      transition: all 0.3s ease;
-    }
-    .menu-toggle:hover {
-      background: linear-gradient(135deg, #FF4C4C, #007BFF);
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    @media(max-width:768px){
-      .nav-links{display:none;}
-      .menu-toggle {
-        display:block;
-        position:fixed;
-        bottom:20px;
-        right:20px;
-        z-index:1100;
-        border-radius:50px;
-      }
-    }
-
-    .mobile-menu {
-      display:none;
-      flex-direction:column;
-      gap:15px;
-      background:#111;
-      padding:15px;
-      position:absolute;
-      top:65px;
-      left:0;
-      width:100%;
-      z-index:999;
-    }
-    .mobile-menu li a {
-      display:block;
-      padding:10px;
-      background:linear-gradient(135deg,#FFD700,#FF4C4C);
-      color:#111;
-      border-radius:6px;
-      text-align:center;
-    }
-
-    /* Carrinho */
-    #carrinho {
-      max-width: 600px;
-      margin: 20px auto;
-      background: #fff;
-      color: #111;
-      border-radius: 8px;
-      padding: 20px;
-    }
-    #lista-carrinho li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      padding: 6px;
-      border-bottom: 1px solid #eee;
-    }
-    .item-info { flex: 1; font-weight: 500; }
-    .item-actions { display: flex; align-items: center; gap: 6px; }
-    .item-actions span { min-width: 24px; text-align: center; font-weight: bold; }
-    .item-actions button {
-      padding: 4px 8px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      background: linear-gradient(45deg, gold, coral);
-      color: #111;
-      font-weight: bold;
-    }
-    .item-actions button:hover { background: #0077cc; color: #fff; }
-
-    #total { margin-top: 12px; font-weight: bold; text-align: right; }
-
-    .finalizar-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .btn-encomenda {
-      padding: 12px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      background: linear-gradient(45deg, gold, coral);
-      color: #111;
-      cursor: pointer;
-    }
-    .btn-encomenda:hover { background: #0077cc; color: #fff; }
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
+  <!-- Barra de navegação -->
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
@@ -152,95 +6,51 @@
       </a>
     </div>
 
-    <!-- Botão Opções -->
+    <div class="filtro filtro-nav">
+        <select id="categoria">
+          <option value="todos">Todos</option>
+          <option value="entradas">Entradas e Petiscos</option>
+          <option value="pequeno-almoco">Pequeno Almoço</option>
+          <option value="carnes">Pratos Carnes</option>
+          <option value="massas">Massas Diverso</option>
+          <option value="bebidas">Bebidas</option>
+          <option value="cervejas">Cervejas Diversas</option>
+          <option value="cocktails">Cocktails</option>
+          <option value="cafe">Café</option>
+          <option value="champanhe">Champanhe</option>
+          <option value="whiskey-velho">Whiskey Velho Dose</option>
+          <option value="whiskey-novo">Whiskey Novo</option>
+          <option value="vinho-tinto">Vinho Tinto</option>
+          <option value="vinho-branco">Vinho Branco Verde</option>
+          <option value="vinho-rose">Vinho Rosé</option>
+          <option value="licores">Licores</option>
+          <option value="cognacs">Cognacs</option>
+          <option value="shots">Shots</option>
+          <option value="sangrias">Sangrias Diversas</option>
+          <option value="vodka-gin">Vodka & Gin</option>
+          <option value="aguardente">Aguardente</option>
+        </select>
+      <button id="limpar-filtro" class="btn-filtro">Limpar</button>
+    </div>
+
     <button class="menu-toggle">Opções ☰</button>
 
     <ul class="nav-links">
-      <li><a href="cardápio.html">Cardápio</a></li>
-      <li><a href="pedidos.html" class="active">Pedidos</a></li>
+      <li><a href="cardápio.html" class="active">Cardápio</a></li>
+      <li><a href="pedidos.html">Pedidos</a></li>
       <li><a href="eventos.html">Eventos</a></li>
       <li><a href="contactos.html">Contactos</a></li>
+	  <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
     </ul>
   </nav>
 
   <!-- Menu mobile -->
   <ul class="mobile-menu">
-    <li><a href="cardápio.html">Cardápio</a></li>
-    <li><a href="pedidos.html" class="active">Pedidos</a></li>
+    <li><a href="cardápio.html" class="active">Cardápio</a></li>
+    <li><a href="pedidos.html">Pedidos</a></li>
     <li><a href="eventos.html">Eventos</a></li>
     <li><a href="contactos.html">Contactos</a></li>
+	<li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
   </ul>
-
-  <!-- Carrinho -->
-  <div id="carrinho">
-    <h2>Seu Pedido</h2>
-    <ul id="lista-carrinho"></ul>
-    <p id="total">Total: 0,00 KZ</p>
-    <div class="finalizar-container">
-      <button class="btn-encomenda" onclick="finalizarEncomenda()">Finalizar Encomenda</button>
-    </div>
-  </div>
-
-  <script>
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    function atualizarCarrinho() {
-      const lista = document.getElementById('lista-carrinho');
-      const totalEl = document.getElementById('total');
-      lista.innerHTML = '';
-      let total = 0;
-
-      carrinho.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <span class="item-info">${item.nome} — ${item.preco.toLocaleString('pt-AO')} KZ</span>
-          <div class="item-actions">
-            <button onclick="alterarQtd('${item.id}', -1)">-</button>
-            <span>${item.qtd}</span>
-            <button onclick="alterarQtd('${item.id}', 1)">+</button>
-            <button onclick="removerItem('${item.id}')">x</button>
-          </div>
-        `;
-        lista.appendChild(li);
-        total += item.preco * item.qtd;
-      });
-
-      totalEl.textContent = "Total: " + total.toLocaleString('pt-AO') + " KZ";
-    }
-
-    function alterarQtd(id, delta) {
-      const item = carrinho.find(i => i.id === id);
-      if (!item) return;
-      item.qtd += delta;
-      if (item.qtd <= 0) carrinho = carrinho.filter(i => i.id !== id);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      atualizarCarrinho();
-    }
-
-    function removerItem(id) {
-      carrinho = carrinho.filter(i => i.id !== id);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      atualizarCarrinho();
-    }
-
-    function finalizarEncomenda() {
-      let mensagem = "🍴 Encomenda GEP Restaurante\n\nItens:\n";
-      carrinho.forEach(item => {
-        mensagem += `- ${item.nome} x${item.qtd} (${item.preco.toLocaleString('pt-AO')} KZ)\n`;
-      });
-      mensagem += `\n${document.getElementById('total').textContent}`;
-
-      const url = "https://wa.me/244923281469?text=" + encodeURIComponent(mensagem);
-      window.open(url, "_blank");
-
-      carrinho = [];
-      localStorage.removeItem('carrinho');
-      atualizarCarrinho();
-
-      window.location.href = "index.html";
-    }
-
-    atualizarCarrinho();
-  </script>
-</body>
-</html>
