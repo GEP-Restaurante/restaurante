@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cardápio - GEP Restaurante</title>
   <style>
-    /* ===== CSS institucional exclusivo do cardápio ===== */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -108,7 +107,7 @@
       gap:15px;
       background:#111;
       padding:15px;
-      position:fixed;
+      position:fixed; /* fixo para não subir com scroll */
       top:65px;
       left:0;
       width:100%;
@@ -140,6 +139,15 @@
       box-shadow:0 4px 8px rgba(0,0,0,0.3);
       width:250px;
     }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain; /* imagem completa */
+      background: linear-gradient(135deg, #FFD700, #FF4C4C); /* gradient institucional */
+      border-radius: 10px;
+      display: block;
+      padding: 8px;
+    }
     .product h3 { font-size:18px; margin:10px 0; color:#FFD700; }
     .price { font-size:16px; font-weight:bold; color:#FF4C4C; margin-bottom:10px; }
     .product button {
@@ -157,18 +165,6 @@
       color:#fff;
       transform:scale(1.05);
     }
-
-	.product img {
-  width: 100%;
-  height: 250px;                /* altura fixa para padronizar */
-  object-fit: contain;          /* mostra a imagem inteira sem cortes */
-  background: linear-gradient(135deg, #FFD700, #FF4C4C); /* gradient institucional */
-  border-radius: 10px;
-  display: block;
-  padding: 8px;                 /* espaço interno para destacar a imagem */
-}
-
-
   </style>
 </head>
 <body>
@@ -182,28 +178,14 @@
     </div>
 
     <div class="filtro filtro-nav">
-         <select id="categoria">
-          <option value="todos">Todos</option>
-          <option value="entradas">Entradas e Petiscos</option>
-          <option value="pequeno-almoco">Pequeno Almoço</option>
-          <option value="carnes">Pratos Carnes</option>
-          <option value="massas">Massas Diverso</option>
-          <option value="bebidas">Bebidas</option>
-		  <option value="bebidas-quentes">Bebidas Quentes</option>
-          <option value="cervejas">Cervejas Diversas</option>
-          <option value="cocktails">Cocktails</option>
-          <option value="champanhe">Champanhe</option>
-          <option value="whiskey-velho">Whiskey Velho Dose</option>
-          <option value="whiskey-novo">Whiskey Novo</option>
-          <option value="vinho-tinto">Vinho Tinto</option>
-          <option value="vinho-branco">Vinho Branco Verde</option>
-          <option value="vinho-rose">Vinho Rosé</option>
-          <option value="licores">Licores</option>
-          <option value="cognacs">Cognacs</option>
-          <option value="shots">Shots</option>
-          <option value="sangrias">Sangrias Diversas</option>
-          <option value="aguardente">Aguardente</option>
-        </select>
+      <select id="categoria">
+        <option value="todos">Todos</option>
+        <option value="entradas">Entradas e Petiscos</option>
+        <option value="matabicho">Pequeno Almoço</option>
+        <option value="carnes">Pratos Carnes</option>
+        <option value="massas">Massas Diverso</option>
+        <option value="bebidas">Bebidas</option>
+      </select>
       <button id="limpar-filtro" class="btn-filtro">Limpar</button>
     </div>
 
@@ -214,12 +196,17 @@
       <li><a href="pedidos.html">Pedidos</a></li>
       <li><a href="eventos.html">Eventos</a></li>
       <li><a href="contactos.html">Contactos</a></li>
-	  <li><a href="https://www.instagram.com/geprestaurantegrill/" target="_blank">Instagram</a></li>
-      <li><a href="https://www.facebook.com/GEPRESTAURANTEGRILL/?locale=pt_BR" target="_blank">Facebook</a></li>
-	  <a href="https://wa.me/244923281469" target="_blank" rel="noopener noreferrer">
-      <img src="imagens/whatsapp-logo.jpg" alt="Posso ajudar?" style="height:18px;vertical-align:middle;margin-right:6px;"></a>
     </ul>
   </nav>
+
+  <!-- Menu mobile -->
+  <ul class="mobile-menu">
+    <li><a href="cardapio.html" class="active">Cardápio</a></li>
+    <li><a href="pedidos.html">Pedidos</a></li>
+    <li><a href="eventos.html">Eventos</a></li>
+    <li><a href="contactos.html">Contactos</a></li>
+  </ul>
+
 
   <!-- Menu mobile -->
   <ul class="mobile-menu">
@@ -1671,6 +1658,7 @@
 </body>
 
 </html>
+
 
 
 
