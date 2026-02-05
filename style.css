@@ -1,5 +1,4 @@
-/* style.css - versão mobile first com glamour */
-
+/* ===== Global ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -18,13 +17,13 @@ html, body {
   display: block;
 }
 
-/* Navbar fixa em todas as versões */
+/* Navbar fixa */
 .navbar {
   background-color: #FFD700; /* dourado institucional */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* permite quebra quando necessário */
+  flex-wrap: wrap;
   padding: 10px 15px;
   position: fixed;
   top: 0;
@@ -32,11 +31,7 @@ html, body {
   width: 100%;
   z-index: 1000;
 }
-
-
-.navbar .logo img {
-  height: 40px;
-}
+.navbar .logo img { height: 40px; }
 
 /* Links desktop */
 .nav-links {
@@ -46,58 +41,31 @@ html, body {
   flex-wrap: wrap;
   margin-left: auto;
 }
-
-/* Estilo para o texto "Filtrar" */
-.filtro-nav label {
-  color: #111111;   /* preto elegante */
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.filtro-nav select {
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.btn-filtro {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #FFD700, #FF4C4C);
-  color: #111111;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
-}
-
-.btn-filtro:hover {
-  background: #0077cc;
-  color: #fff;
-}
-
 .nav-links li a {
   text-decoration: none;
   color: #111111;
   font-weight: bold;
   transition: color 0.3s;
 }
+.nav-links li a:hover { color: #FF4C4C; }
 
-.nav-links li a:hover {
-  color: #FF4C4C; /* coral jovem */
-}
-
-/* Botão Opções */
+/* Botão Opções (desktop: escondido) */
 .menu-toggle {
-  display: none;
+  display: none; /* escondido no desktop */
   background: linear-gradient(135deg, #FFD700, #FF4C4C);
   color: #111111;
   border: none;
-  padding: 8px 18px;
+  padding: 8px 14px;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+.menu-toggle:hover {
+  background: linear-gradient(135deg, #FF4C4C, #007BFF);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 /* Menu mobile */
@@ -113,7 +81,6 @@ html, body {
   width: 100%;
   z-index: 999;
 }
-
 .mobile-menu li a {
   display: block;
   padding: 10px;
@@ -122,8 +89,8 @@ html, body {
   border-radius: 6px;
   text-align: center;
   box-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
 }
-
 .mobile-menu li a:hover {
   background: linear-gradient(135deg, #FF4C4C, #007BFF);
   color: #fff;
@@ -131,102 +98,14 @@ html, body {
 }
 
 /* Mobile first */
-@media (max-width: 600px) {
-  .nav-links {
-    display: none; /* esconde links desktop */
-  }
-
-  /* iPhone 13 Pro (390px) */
-@media (max-width: 420px) {
-  .navbar {
-    flex-direction: column; /* empilha se não couber */
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  .logo {
-    align-self: center;
-  }
- .filtro-nav {
-    width: 100%;
-  }
- .menu-toggle {
-    align-self: flex-end;
-  }
-}
-
-
-  /* Redmi 15C (720px) */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* esconde links desktop */
-  }
-
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .logo {
-    flex: 0 0 auto;
-  }
-
-  .filtro-nav {
-    flex: 1;
-  }
-
-  .menu-toggle {
-    flex: 0 0 auto;
-  }
+  .nav-links { display: none; }
+  .navbar { gap: 8px; flex-wrap: nowrap; }
+  .logo { flex: 0 0 auto; }
+  .menu-toggle { display: block; } /* visível apenas em mobile */
 }
 
-
-  /* Filtro + limpar */
-.filtro-nav {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex: 1; /* ocupa espaço flexível */
-  min-width: 160px;
-}
-
-.filtro-nav select {
-  flex: 1;
-  min-width: 100px;
-  padding: 6px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-
-  .btn-filtro {
-  flex: 0 0 auto;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  background: linear-gradient(135deg, #FFD700, #FF4C4C);
-  color: #111;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-  /* Botão Opções */
-.menu-toggle {
-  flex: 0 0 auto;
-  background: linear-gradient(135deg, #FFD700, #FF4C4C);
-  color: #111;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-}
-
-/* Main mobile first */
+/* Main */
 main {
   display: flex;
   flex-direction: column;
@@ -238,20 +117,18 @@ main {
 main img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: contain;       /* mostra a imagem inteira sem cortes */
-  background-color: #000;    /* fundo preto elegante */
+  object-fit: contain;
+  background-color: #000;
   border-radius: 10px;
   display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Hover glamouroso nas imagens */
 main img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Produtos (cards) */
+/* Produtos */
 .product {
   background-color: #1a1a1a;
   border-radius: 10px;
@@ -259,19 +136,8 @@ main img:hover {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
-.product h3 {
-  font-size: 18px;
-  margin: 10px 0;
-  color: #FFD700;
-}
-
-.price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #FF4C4C;
-  margin-bottom: 10px;
-}
+.product h3 { font-size: 18px; margin: 10px 0; color: #FFD700; }
+.price { font-size: 16px; font-weight: bold; color: #FF4C4C; margin-bottom: 10px; }
 
 /* Botões glamourosos */
 button, .btn-eventos {
@@ -286,7 +152,6 @@ button, .btn-eventos {
   box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
   transition: all 0.3s ease;
 }
-
 button:hover, .btn-eventos:hover {
   background: linear-gradient(135deg, #FF4C4C, #007BFF);
   color: #fff;
@@ -300,12 +165,11 @@ button:hover, .btn-eventos:hover {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  justify-content: center; /* centraliza os itens */
+  justify-content: center;
 }
-
 .galeria img {
-  flex: 1 1 calc(33% - 20px); /* padrão: 3 por linha */
-  max-width: 300px;           /* limite máximo por imagem */
+  flex: 1 1 calc(33% - 20px);
+  max-width: 300px;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: contain;
@@ -313,13 +177,15 @@ button:hover, .btn-eventos:hover {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Quando só cabe 1 por linha (mobile) */
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
 @media (max-width: 600px) {
   .galeria img {
     flex: 1 1 auto;
-    max-width: 300px;   /* mantém tamanho reservado */
-    margin: 0 auto;     /* centraliza a imagem */
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
@@ -331,17 +197,13 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
-
 footer a {
   color: #111111;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
-
-footer a:hover {
-  color: #FF4C4C;
-}
+footer a:hover { color: #FF4C4C; }
 
 /* Lightbox */
 .lightbox {
@@ -357,21 +219,18 @@ footer a:hover {
   align-items: center;
   flex-direction: column;
 }
-
 .lightbox-img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255,215,0,0.6);
 }
-
 .caption {
   margin-top: 15px;
   color: #FFD700;
   font-size: 18px;
   text-align: center;
 }
-
 .close {
   position: absolute;
   top: 20px;
@@ -389,13 +248,11 @@ footer a:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .product {
     flex: 1 1 calc(50% - 40px);
     max-width: 300px;
   }
 }
-
 @media (min-width: 1024px) {
   .product {
     flex: 1 1 calc(25% - 40px);
@@ -405,15 +262,14 @@ footer a:hover {
 
 /* ===== Carrinho ===== */
 #carrinho {
-  max-height: 300px;          /* altura máxima antes de scroll */
-  overflow-y: auto;           /* ativa scroll vertical */
+  max-height: 300px;
+  overflow-y: auto;
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
   background: #fff;
   border-radius: 8px;
 }
-
 #lista-carrinho li {
   display: flex;
   justify-content: space-between;
@@ -422,26 +278,18 @@ footer a:hover {
   padding: 6px;
   border-bottom: 1px solid #eee;
 }
-
-.item-info {
-  flex: 1;
-  font-weight: 500;
-  color: #333;
-}
-
+.item-info { flex: 1; font-weight: 500; color: #333; }
 .item-actions {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-
 .item-actions span {
   min-width: 24px;
   text-align: center;
   font-weight: bold;
   color: #222;
 }
-
 .item-actions button {
   padding: 4px 8px;
   border: none;
@@ -452,7 +300,6 @@ footer a:hover {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .item-actions button:hover {
   background: #0077cc;
   color: #fff;
@@ -479,7 +326,6 @@ footer a:hover {
   text-align: center;
   z-index: 1000;
 }
-
 .btn-encomenda {
   padding: 12px 20px;
   font-size: 16px;
@@ -491,10 +337,7 @@ footer a:hover {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .btn-encomenda:hover {
   background: #0077cc;
   color: #fff;
 }
-
-
